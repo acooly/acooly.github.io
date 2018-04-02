@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="linux,rsync," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="rsync是类unix系统下的数据镜像备份工具。本文以Nexue数据备份的实践应用为案例，介绍整个应用过程。作为入门材料，rsync的高级配置和应用不在本文范畴。 功能及特点  可以镜像保存整个目录树和文件系统。 可以很容易做到保持原来文件的权限、时间、软硬链接等等。 无须特殊权限即可安装。 快速：第一次同步时 rsync 会复制全部内容，但在下一次只传输修改过的文件。rsync 在传输数据的过程">
+<meta name="keywords" content="linux,rsync">
+<meta property="og:type" content="article">
+<meta property="og:title" content="rsync同步数据">
+<meta property="og:url" content="http://acooly.github.io/2017/04/21/服务应用/2015-12-21-rsync同步文件/index.html">
+<meta property="og:site_name" content="Acooly&#39;s Blog">
+<meta property="og:description" content="rsync是类unix系统下的数据镜像备份工具。本文以Nexue数据备份的实践应用为案例，介绍整个应用过程。作为入门材料，rsync的高级配置和应用不在本文范畴。 功能及特点  可以镜像保存整个目录树和文件系统。 可以很容易做到保持原来文件的权限、时间、软硬链接等等。 无须特殊权限即可安装。 快速：第一次同步时 rsync 会复制全部内容，但在下一次只传输修改过的文件。rsync 在传输数据的过程">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-04-21T15:36:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="rsync同步数据">
+<meta name="twitter:description" content="rsync是类unix系统下的数据镜像备份工具。本文以Nexue数据备份的实践应用为案例，介绍整个应用过程。作为入门材料，rsync的高级配置和应用不在本文范畴。 功能及特点  可以镜像保存整个目录树和文件系统。 可以很容易做到保持原来文件的权限、时间、软硬链接等等。 无须特殊权限即可安装。 快速：第一次同步时 rsync 会复制全部内容，但在下一次只传输修改过的文件。rsync 在传输数据的过程">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://acooly.github.io/2017/04/21/服务应用/2015-12-21-rsync同步文件/"/>
+
+
+
+
+
+  <title>rsync同步数据 | Acooly's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Acooly's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">coder live</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://acooly.github.io/2017/04/21/服务应用/2015-12-21-rsync同步文件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang pu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Acooly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">rsync同步数据</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-21T23:36:35+08:00">
+                2017-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/服务应用/" itemprop="url" rel="index">
+                    <span itemprop="name">服务应用</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>rsync是类unix系统下的数据镜像备份工具。本文以Nexue数据备份的实践应用为案例，介绍整个应用过程。作为入门材料，rsync的高级配置和应用不在本文范畴。</p>
+<p><strong>功能及特点</strong></p>
+<ul>
+<li>可以镜像保存整个目录树和文件系统。</li>
+<li>可以很容易做到保持原来文件的权限、时间、软硬链接等等。</li>
+<li>无须特殊权限即可安装。</li>
+<li>快速：第一次同步时 rsync 会复制全部内容，但在下一次只传输修改过的文件。rsync 在传输数据的过程中可以实行压缩及解压缩操作，因此可以使用更少的带宽。</li>
+<li>安全：可以使用scp、ssh等方式来传输文件，当然也可以通过直接的socket连接。</li>
+<li>支持匿名传输，以方便进行网站镜象。</li>
+</ul>
+<p><strong>使用场景</strong></p>
+<ul>
+<li>服务器数据备份</li>
+<li>集群服务器中数据同步（增量是亮点啊）</li>
+</ul>
+<blockquote>
+<p>官方网站：<a href="http://rsync.samba.org/" target="_blank" rel="noopener">http://rsync.samba.org/</a></p>
+</blockquote>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># rsync通过ssh作为通道，进行拷贝同步。</span></span><br><span class="line"><span class="comment"># -r:递归,-u:增量</span></span><br><span class="line">rsync -rvzu -e <span class="string">'ssh -p 23987'</span> --progress  optuser@source.domain.com:/data/media/ /data/media/</span><br></pre></td></tr></table></figure>
+<h3 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h3><p>rsync是应用模式是标准的C/S模式，原始数据所在的服务器A作为服务器，其他备份和同步的服务器B为客户端。所以分为服务器端配置和客户端配置。方案规划如下：</p>
+<table>
+<thead>
+<tr>
+<th>角色</th>
+<th>名称</th>
+<th>IP</th>
+<th>用户</th>
+<th>目录        </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>服务端</td>
+<td>服务器A</td>
+<td>192.168.30.202</td>
+<td>root</td>
+<td>/data/sonatype-work</td>
+</tr>
+<tr>
+<td>服务端</td>
+<td>服务器B</td>
+<td>192.168.30.208</td>
+<td>root</td>
+<td>/data/sonatype-work</td>
+</tr>
+</tbody>
+</table>
+<h4 id="rsync安装"><a href="#rsync安装" class="headerlink" title="rsync安装"></a>rsync安装</h4><p>rsync的安装，服务器端和客户端完全相同。</p>
+<p><strong>源代码安装</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注意，如果文件不存在，则直接访问http://rsync.samba.org/ftp/rsync/目录查看最新版本</span></span><br><span class="line">wget http://rsync.samba.org/ftp/rsync/rsync-3.1.1.tar.gz</span><br><span class="line">tar -xzvf rsync-3.1.1.tar.gz</span><br><span class="line"><span class="built_in">cd</span> rsync-3.1.1</span><br><span class="line">./configure --prefix=/usr</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<p><strong>yum安装</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install rsync</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>说明：编译安装需要gcc支持，如果没有安装，请先安装。我使用的是centOS6.3，所以就直接:yum install gcc.就OK了。</p>
+</blockquote>
+<p>OK，安装完成。</p>
+<h4 id="服务端配置-服务器A"><a href="#服务端配置-服务器A" class="headerlink" title="服务端配置(服务器A)"></a>服务端配置(服务器A)</h4><p>服务器端的需求是通过rsync提供对/data/sonatype-work目录的同步备份服务，同时要求服务器启动自动启动服务。rsync配置主要通过3个配置文件配置完成。如下：</p>
+<blockquote>
+<p>这个三个配置文件默认不存在，需手动建立</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc</span><br><span class="line">touch rsyncd.conf</span><br><span class="line">touch rsyncd.motd</span><br><span class="line">touch rsyncd.secrets</span><br><span class="line">chmod 600 rsyncd.secrets</span><br><span class="line">ll rsyncd.*</span><br><span class="line">-rw-r--r-- 1 root root 918 Mar  6 22:44 rsyncd.conf</span><br><span class="line">-rw-r--r-- 1 root root 191 Mar  6 22:06 rsyncd.motd</span><br><span class="line">-rw------- 1 root root  14 Mar  6 22:04 rsyncd.secrets</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意啦，无论客户端还是服务端，rsyncd.secrets文件的权限都需要为600（属主外不能访问）</p>
+</blockquote>
+<ul>
+<li><strong>rsyncd.conf</strong>：主配置文件，配置rsync服务的公共参数（IP,端口，进程文件，IP限制，日志，连接超时等）和需要同步的模块（需要同步的目录及常规参数）</li>
+<li><strong>rsyncd.secrets</strong>：客户端请求同步时的账户安全认证文件。类似samba的模式（user:passwsord[明文哈]），这个文件的需要特别注意权限设置为宿主可访问才行（chmod 600 rsyncd.secrets）。</li>
+<li><strong>rsyncd.motd</strong>：该文件就是客户端请求上来的时候，立即回复的欢迎信息，就和FTP登录时显示差不多意思。</li>
+</ul>
+<p>下面我们分配配置和说明这些配置文件。</p>
+<p><strong>rsyncd.conf</strong></p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"># Minimal configuration <span class="keyword">file</span> <span class="keyword">for</span> rsync daemon</span><br><span class="line"># See rsync(<span class="number">1</span>) <span class="built_in">and</span> rsyncd.<span class="keyword">conf</span>(<span class="number">5</span>) man pages <span class="keyword">for</span> <span class="keyword">help</span></span><br><span class="line"></span><br><span class="line">##################################### 以下是公共参数配置 #############################################</span><br><span class="line"># This <span class="built_in">line</span> <span class="keyword">is</span> required by the /etc/init.d/rsyncd script</span><br><span class="line">pid <span class="keyword">file</span> = /var/run/rsyncd.pid</span><br><span class="line"># 服务的端口</span><br><span class="line">port = <span class="number">873</span></span><br><span class="line"># 服务的IP</span><br><span class="line">address = <span class="number">192.168</span>.<span class="number">30.202</span>  </span><br><span class="line"># 运行的宿主账户，这里为简单就root了</span><br><span class="line">uid = root   </span><br><span class="line">gid = root  </span><br><span class="line"># 这个参数复杂，有空去查查。打开（yes）后有个功能是让符号链接可以同步过去（不通过符号链接对应的实际文件）</span><br><span class="line">use chroot = yes</span><br><span class="line"># 客户端只读</span><br><span class="line"><span class="keyword">read</span> <span class="keyword">only</span> = yes</span><br><span class="line">#limit access <span class="keyword">to</span> private LANs</span><br><span class="line">hosts allow=<span class="number">192.168</span>.<span class="number">30.0</span>/<span class="number">255.255</span>.<span class="number">255.0</span></span><br><span class="line">hosts deny=*</span><br><span class="line"># 最大连接数</span><br><span class="line"><span class="built_in">max</span> connections = <span class="number">5</span> </span><br><span class="line"># 欢迎信息对应的文件</span><br><span class="line">motd <span class="keyword">file</span> = /etc/rsyncd.motd</span><br><span class="line"># 客户端链接的超时时间</span><br><span class="line">timeout = <span class="number">300</span></span><br><span class="line"></span><br><span class="line"># 以下是日志相关配置，可选使用独立日志文件和系统日志，这里选择的是系统日志（/var/<span class="built_in">log</span>/message）</span><br><span class="line"># This will give you <span class="keyword">a</span> separate <span class="built_in">log</span> <span class="keyword">file</span></span><br><span class="line"># <span class="built_in">log</span> <span class="keyword">file</span> = /var/<span class="built_in">log</span>/rsync.<span class="built_in">log</span></span><br><span class="line"># This will <span class="built_in">log</span> every <span class="keyword">file</span> transferred - <span class="keyword">up</span> <span class="keyword">to</span> <span class="number">85</span>,<span class="number">000</span>+ per user, per <span class="keyword">sync</span></span><br><span class="line"># transfer logging = yes</span><br><span class="line"><span class="built_in">log</span> format = %t %<span class="keyword">a</span> %<span class="keyword">m</span> %<span class="keyword">f</span> %<span class="keyword">b</span></span><br><span class="line">syslog facility = local3</span><br><span class="line"></span><br><span class="line">##################################### 同步模块配置 #############################################</span><br><span class="line">[nexus]</span><br><span class="line"># 需要同步的路径</span><br><span class="line">path = /data/sonatype-work</span><br><span class="line"># 客户端可以使用<span class="keyword">list</span>命令列表显示</span><br><span class="line"><span class="keyword">list</span>=yes</span><br><span class="line"># 忽略错误</span><br><span class="line">ignore errors</span><br><span class="line"># 认证用户</span><br><span class="line">auth users = root</span><br><span class="line"># 认证使用的账户密码文件</span><br><span class="line">secrets <span class="keyword">file</span> = /etc/rsyncd.secrets</span><br><span class="line"># 备注信息</span><br><span class="line">comment = This <span class="keyword">is</span> nexus data</span><br><span class="line"># 如果有忽略的子目录，可以通过exclude定义</span><br><span class="line"># exclude = easylife/  samba/</span><br></pre></td></tr></table></figure>
+<p><strong>rsyncd.secrets</strong></p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 用户名:密码明文了</span><br><span class="line">roo<span class="variable">t:1qaz</span>@WSX</span><br></pre></td></tr></table></figure>
+<p><strong>rsyncd.motd</strong></p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">+++++++++++++++++++++++++++++++++++++++++++++++++++++</span><br><span class="line">　　      Welcome <span class="keyword">to</span> Nexus rsync services</span><br><span class="line">           <span class="number">2012</span>--<span class="number">2013</span> create by zhangpu</span><br><span class="line">++++++++++++++++++++++++++++++++++++++++++++++++++++</span><br></pre></td></tr></table></figure>
+<p><strong>防火墙</strong><br>如果你开启了操作系统的防火墙，请使用iptables配置873端口可用。我反反正是直接关闭了(我的多数环境通过上层防火墙管控)，简单点。</p>
+<p><strong>启动服务</strong></p>
+<p>手动方式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## --config用于指定rsyncd.conf的位置,如果在/etc下可以不写</span></span><br><span class="line">/usr/bin/rsync --daemon  --config=/etc/rsyncd.conf</span><br></pre></td></tr></table></figure>
+<p>xinetd方式:<br>如果没有安装xinet，请先安装，对应本系统（CentOS）,我直接 yum install xinet 就OK了<br>在rsync默认安装完成后，安装程序会自动在建立/etc/xinetd.d/rsync文件，但是默认情况是disable = yes（也就是不可用的），需要修改为disable=no 即可<br>然后，我们通过xinet启动rsync:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service xinetd start/restart</span><br></pre></td></tr></table></figure>
+<p>测试下，可以查看进程，端口监听等，我还是喜欢最笨最原始的方式：telnet,哈哈!</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">telnet 192.168.30.202 873</span><br><span class="line">Trying 192.168.30.202...</span><br><span class="line">Connected to 192.168.30.202 (192.168.30.202).</span><br><span class="line">Escape character is <span class="string">'^]'</span>.</span><br><span class="line">@RSYNCD: 30.0</span><br><span class="line">+++++++++++++++++++++++++++++++++++++++++++++++++++++</span><br><span class="line">　　      Welcome to Nexus rsync services</span><br><span class="line">           2012--2013 create by zhangpu</span><br><span class="line">++++++++++++++++++++++++++++++++++++++++++++++++++++</span><br></pre></td></tr></table></figure>
+<p>都看到欢迎界面了，肯定服务起来了。</p>
+<h4 id="客户端配置（服务器B）"><a href="#客户端配置（服务器B）" class="headerlink" title="客户端配置（服务器B）"></a>客户端配置（服务器B）</h4><p>客户端是备份服务器，负责使用rsync命令从服务器备份或同步数据到本地指定目录。这里使用crontab+rsync实现定时自动增量同步的功能。<br>我决定在/data/rsync下建立一个脚本来实现启动rsync同步的功能，然后再使用crontab来实现定时调度。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">chmod 600 /data/rsync/rsyncd.secrets</span><br><span class="line">ll /data/rsync</span><br><span class="line">total 8</span><br><span class="line">-rwxr-xr-x 1 root root 177 Mar  6 15:27 rsync_client_nexus.sh</span><br><span class="line">-rwx------ 1 root root   9 Mar  6 15:17 rsyncd.secrets</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意啦，无论客户端还是服务端，rsyncd.secrets文件的权限都需要为600（属主外不能访问）</p>
+</blockquote>
+<p><strong>rsync_client_nexus.sh</strong></p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/<span class="keyword">sh</span></span><br><span class="line"># backup <span class="number">192.168</span>.<span class="number">30.202</span> nexus data with rysnc</span><br><span class="line"># 参数说明：</span><br><span class="line"># -avzP表示归档，压缩并显示进度；</span><br><span class="line"># --<span class="keyword">delete</span>表示如果服务端删除的文件，客户端也需要删除；</span><br><span class="line"># --password-<span class="keyword">file</span>: 指定用户密码文件，不用用户交互输入。</span><br><span class="line"># root@<span class="number">192.168</span>.<span class="number">30.202</span>::nexus 表示：使用root用户访问<span class="number">192.168</span>.<span class="number">30.202</span>的nexus模块，‘::’表示从服务器端拷贝数据</span><br><span class="line"># /data/sonatype-work ： 本地保存同步文件的目录。</span><br><span class="line">/usr/bin/rsync -avzP --<span class="keyword">delete</span> --password-<span class="keyword">file</span>=/data/rsync/rsyncd.secrets root@<span class="number">192.168</span>.<span class="number">30.202</span>::nexus /data/sonatype-work</span><br></pre></td></tr></table></figure>
+<p><strong>rsyncd.secrets</strong><br>该文件保存rsync命令中使用的用户名的密码明文，这里就是上面的root用户的密码。同时注意这里和服务器端一样，该文件的权限为宿主可以读写（chmod 600 rsyncd.secrets）</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## root（rsync的，非操作系统）用户的密码</span><br><span class="line"><span class="number">1</span>qaz@WSX</span><br></pre></td></tr></table></figure>
+<p><strong>定时处理</strong><br>crontab配置<br>这是配置每天凌晨1点1分进行同步处理。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crontab -e</span><br><span class="line">1 1 * * * /data/rsync/rsync_client_nexus.sh   1&gt; /dev/null</span><br></pre></td></tr></table></figure>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>测试就比较简单了，在服务器A的/data/sonatype-work下建立一个testfile,随便输入些东西，然后在服务器B中手动运行同步脚本rsync_client_nexus.sh</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="zhang pu wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫描上面的二维码，订阅我的博客</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+            <a href="/tags/rsync/" rel="tag"># rsync</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/20/database/mysql/MySQL备份和还原/" rel="next" title="MySQL备份和还原">
+                <i class="fa fa-chevron-left"></i> MySQL备份和还原
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/22/linux/2015-12-14-linux_online/" rel="prev" title="linux java生产环境">
+                linux java生产环境 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.jpeg"
+                alt="zhang pu" />
+            
+              <p class="site-author-name" itemprop="name">zhang pu</p>
+              <p class="site-description motion-element" itemprop="description">本质是个程序猿，会点产品，懂点业务，有帮可信赖的志同道合的同伴，做点组织管理，基础架构和应用架构的事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://bohr.me/" title="qiubo's life" target="_blank">qiubo's life</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.1119e.com/" title="投资1119e" target="_blank">投资1119e</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.pccb.com" title="普资金服" target="_blank">普资金服</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令"><span class="nav-number">1.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装配置"><span class="nav-number">2.</span> <span class="nav-text">安装配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#rsync安装"><span class="nav-number">2.1.</span> <span class="nav-text">rsync安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#服务端配置-服务器A"><span class="nav-number">2.2.</span> <span class="nav-text">服务端配置(服务器A)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#客户端配置（服务器B）"><span class="nav-number">2.3.</span> <span class="nav-text">客户端配置（服务器B）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试"><span class="nav-number">3.</span> <span class="nav-text">测试</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhang pu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

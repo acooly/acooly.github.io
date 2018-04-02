@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本质是个程序猿，会点产品，懂点业务，有帮可信赖的志同道合的同伴，做点组织管理，基础架构和应用架构的事">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Acooly&#39;s Blog">
+<meta property="og:url" content="http://acooly.github.io/page/4/index.html">
+<meta property="og:site_name" content="Acooly&#39;s Blog">
+<meta property="og:description" content="本质是个程序猿，会点产品，懂点业务，有帮可信赖的志同道合的同伴，做点组织管理，基础架构和应用架构的事">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Acooly&#39;s Blog">
+<meta name="twitter:description" content="本质是个程序猿，会点产品，懂点业务，有帮可信赖的志同道合的同伴，做点组织管理，基础架构和应用架构的事">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://acooly.github.io/page/4/"/>
+
+
+
+
+
+  <title>Acooly's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Acooly's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">coder live</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://acooly.github.io/2016/03/01/database/mysql/2015-10-10-mysql-notes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang pu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Acooly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/03/01/database/mysql/2015-10-10-mysql-notes/" itemprop="url">Linux mysql 杂记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-01T16:18:35+08:00">
+                2016-03-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Linux安装"><a href="#Linux安装" class="headerlink" title="*Linux安装"></a>*Linux安装</h2><p>YUM方式安装服务和客户端</p>
+<pre><code>yum -y remove mysql-libs*
+rpm -ivh MySQL-server-5.6.10-1.el6.x86_64.rpm
+rpm -ivh MySQL-client-5.6.10-1.el6.x86_64.rpm
+</code></pre><p>拷贝配置文件到/etc目录</p>
+<pre><code>mv /usr/my.cnf /etc/
+</code></pre><p>查看默认root密码，并修改密码</p>
+<pre><code>cat ~/.mysql_secret
+qixQqr7l
+service mysql start
+mysqladmin -u root -p qixQqr7l password
+*************
+#如果报错，则使用另外方法：直接使用初始密码登入后使用命令修改。
+mysql -uroot -p qixQqr7l
+********
+mysql&gt; set password for &apos;root&apos;@&apos;localhost&apos; = PASSWORD(&apos;123456&apos;);
+        Query OK, 0 rows affected (0.00 sec)
+service mysql stop
+</code></pre><h2 id="设置网络访问权限"><a href="#设置网络访问权限" class="headerlink" title="*设置网络访问权限"></a>*设置网络访问权限</h2><blockquote>
+<p>MYSQL的用户访问策略是需要指定用户从某IP可以访问那些权限。具体用法请参考grant命令。这里为了简单起见，直接设置root用户在整个局域内(10.10.10.*)都可以访问数据库。</p>
+</blockquote>
+<pre><code>mysql -uroot -p
+******
+mysql&gt; GRANT ALL PRIVILEGES ON *.* TO root@&apos;10.10.10.%&apos; IDENTIFIED BY &apos;password&apos; WITH GRANT OPTION;
+mysql&gt;FLUSH PRIVILEGES;
+</code></pre><h2 id="MYSQL配置参数"><a href="#MYSQL配置参数" class="headerlink" title="*MYSQL配置参数"></a>*MYSQL配置参数</h2><pre><code>[mysqld]
+# 服务器端编码
+character-set-server=utf8
+# 表名不取法大小写
+lower_case_table_names=1
+</code></pre><h2 id="mysql普通用户"><a href="#mysql普通用户" class="headerlink" title="*mysql普通用户"></a>*mysql普通用户</h2><pre><code>grant all on openfire.* to openfire@&quot;192.168.123.%&quot; identified by &apos;******&apos;;
+</code></pre><h2 id="window下找my-ini所在目录"><a href="#window下找my-ini所在目录" class="headerlink" title="*window下找my.ini所在目录"></a>*window下找my.ini所在目录</h2><blockquote>
+<p>根据安装和mysql不同，my.ini所在目录不是固定的。通常可以根据mysql安装程序生成的MySQL 5.6 Command Line Client的快捷方式中去查看加载的是那个目录的my.ini</p>
+</blockquote>
+<h2 id="查看MYSQL编码"><a href="#查看MYSQL编码" class="headerlink" title="*查看MYSQL编码"></a>*查看MYSQL编码</h2><pre><code>show variables like &apos;character_set%&apos;;
+mysql&gt; show variables like &apos;character_set%&apos;;
++--------------------------+-------------------------------------------+
+| Variable_name            | Value                                     |
++--------------------------+-------------------------------------------+
+| character_set_client     | utf8                                      |
+| character_set_connection | utf8                                      |
+| character_set_database   | latin1                                    |
+| character_set_filesystem | binary                                    |
+| character_set_results    | utf8                                      |
+| character_set_server     | latin1                                    |
+| character_set_system     | utf8                                      |
+| character_sets_dir       | D:\MySQL\MySQL Server 5.6\share\charsets\ |
++--------------------------+-------------------------------------------+
+8 rows in set (0.00 sec)
+
+character_set_database
+[mysqld]
+</code></pre><h2 id="修改密码"><a href="#修改密码" class="headerlink" title="*修改密码"></a>*修改密码</h2><pre><code>cat ~/.mysql_secret
+qixQqr7l
+service mysql start
+mysqladmin -u root -p qixQqr7l password
+*************
+service mysql stop
+</code></pre><h2 id="找回root密码"><a href="#找回root密码" class="headerlink" title="*找回root密码"></a>*找回root密码</h2><ol>
+<li><p>停止mysql服务，然后不加载权限方式启动</p>
+<pre><code>service mysqld stop
+/usr/bin/mysqld_safe --skip-grant-tables &amp;
+</code></pre></li>
+<li><p>登录mysql，直接更新密码</p>
+<pre><code>mysql
+use mysql 
+update user set password=password(&quot;123456&quot;) where user=&quot;root&quot;; 
+flush privileges; 
+</code></pre></li>
+</ol>
+<h2 id="分区表创建"><a href="#分区表创建" class="headerlink" title="*分区表创建"></a>*分区表创建</h2><pre><code>CREATE TABLE `order_info_p` (
+  `gid` varchar(40) NOT NULL COMMENT &apos;全站式统一流水号&apos;,
+  `order_no` varchar(40) NOT NULL COMMENT &apos;订单号&apos;,
+  `partner_id` varchar(40) NOT NULL COMMENT &apos;合作伙伴id&apos;,
+  `service` varchar(32) NOT NULL,
+  `version` varchar(8) NOT NULL,
+  `charset` varchar(16) DEFAULT NULL COMMENT &apos;请求编码&apos;,
+  `trade_no` varchar(40) DEFAULT NULL COMMENT &apos;交易流水号&apos;,
+  `notify_url` varchar(256) DEFAULT NULL COMMENT &apos;异步通知地址&apos;,
+  `return_url` varchar(256) DEFAULT NULL COMMENT &apos;同步返回地址&apos;,
+  `business_info` varchar(1024) DEFAULT NULL COMMENT &apos;请求业务信息&apos;,
+  `raw_add_time` datetime DEFAULT NULL COMMENT &apos;创建/更新时间&apos;,
+  `raw_update_time` datetime DEFAULT NULL,
+  primary key(gid,raw_add_time)
+)  ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT=&apos;请求信息表&apos; 
+PARTITION BY RANGE(raw_add_time div 100000000)
+(
+ PARTITION p_2014_11 VALUES LESS THAN (201411),
+ PARTITION p_2014_12 VALUES LESS THAN (201412),
+ PARTITION p_2015_01 VALUES LESS THAN (201501),
+ PARTITION p_2015_02 VALUES LESS THAN (201502),
+ PARTITION p_2015_03 VALUES LESS THAN (201503),
+ PARTITION p_2015_04 VALUES LESS THAN (201504),
+ PARTITION p_catch_all VALUES LESS THAN MAXVALUE
+);
+</code></pre><p>分区索引的局限：</p>
+<ol>
+<li>所有分区都要使用同样的引擎。</li>
+<li>分区表的每一个唯一索引必须包含由分区函数引用的列。</li>
+<li>mysql能避免查询所有的分区，但仍然锁定了所有分区。</li>
+<li>分区函数能使用的函数和表达式有限，例如函数有上面的4种。</li>
+<li>分区不支持外键。  <a href="http://www.2cto.com" target="_blank" rel="noopener">www.2cto.com</a>  </li>
+<li>不能使用LOAD INDEX INTO CACHE</li>
+<li>分区并不能总是改善性能，要进行性能评测。</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://acooly.github.io/2016/03/01/linux/2015-12-16-linux_lamp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang pu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Acooly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/03/01/linux/2015-12-16-linux_lamp/" itemprop="url">linux lamp非主流搭建</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-01T16:18:35+08:00">
+                2016-03-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-环境和软件"><a href="#1-环境和软件" class="headerlink" title="1. 环境和软件"></a>1. 环境和软件</h2><ol>
+<li>OS:centOS6.x或redhat6.x，本文采用CentOS6.5进行配置</li>
+<li>Apache-httpd-2.2.15（yum方式安装）</li>
+<li>Mysql-5.6.10（rpm方式安装）</li>
+<li>php-5.6.15（编译方式安装）</li>
+</ol>
+<blockquote>
+<p>安装方式有点乱是因为先有了熟悉的httpd和mysql安装配置经验和工具，复用了。php配置比较少，只有通过网络收集资料然后实践整理。</p>
+</blockquote>
+<p>OS基本环境要求：<br>openssl，openssl-devel,gcc</p>
+<pre><code># 检查gcc等组件
+rpm -q gcc
+gcc-4.4.7-3.el6.x86_64
+# 如果没有安装，一般采用yum方式安装最简单
+yum search gcc|openssl|openssl-devel
+yum install ...    
+
+# apr/apr-util &gt;= 1.2,如果apr/apr-util不存在可以再后续的安装包中先安装。
+# 如果版本小于1.2，则需要先安装APR和APR-util
+rpm -q apr
+apr-1.2.7-11
+</code></pre><h2 id="2-安装mysql"><a href="#2-安装mysql" class="headerlink" title="2.安装mysql"></a>2.安装mysql</h2><p>mysql的安装可以使用yum方式安装，也可以自己下载二进制包安装，因我这里有下载好的熟悉的版本安装包和自动安装脚本，故采用后者。</p>
+<p>linux环境安装配置工具:env-setup。下载地址在SVN下:<br><a href="http://acooly.gicp.net/svn/framework/acooly-script/env-setup" target="_blank" rel="noopener">http://acooly.gicp.net/svn/framework/acooly-script/env-setup</a></p>
+<p>直接在linux上使用svn checkout</p>
+<pre><code>svn checkout http://acooly.gicp.net/svn/framework/acooly-script/env-setup
+</code></pre><blockquote>
+<p>你必须是我们团队成员并有密码哈。</p>
+</blockquote>
+<p>进入env-setup/bin目录，运行：</p>
+<pre><code>./install.mysql.sh
+</code></pre><blockquote>
+<p>请根据提示进行操作。该脚本会自动从acooly文件服务器下载安装文件，文件服务器的认证需要SVN账户认证。</p>
+</blockquote>
+<p>该脚本功能如下：</p>
+<ul>
+<li>自动下载mysql的server和client安装文件，版本号：5.6.10</li>
+<li>自动卸载本机默认mysql相关的lib包，防止冲突（mysql-libs）</li>
+<li>自动安装mysql的server和client</li>
+<li>迁移主配置文件到/etc/my.cnf</li>
+<li>迁移数据目录到/data/mysql目录</li>
+<li>自动生成新密码列表（12个随机字符），修改root密码（交互式）</li>
+</ul>
+<h2 id="3-apache安装"><a href="#3-apache安装" class="headerlink" title="3.apache安装"></a>3.apache安装</h2><p>参考：<a href="http://acooly.iteye.com/blog/1347749" target="_blank" rel="noopener">http://acooly.iteye.com/blog/1347749</a></p>
+<p>采用yum方式安装。</p>
+<pre><code>yum intall httpd
+# 安装devel是为了安装后续需要的apxs
+yum install httpd-devel
+</code></pre><p>安装完成后，apache的所有配置在/etc/httpd下面。主配置文件conf/httpd.conf,其他模块配置文件放到conf.d/,默认情况下只有welcome.conf</p>
+<blockquote>
+<p>注意：</p>
+</blockquote>
+<p>安装后，后续PHP需要的apxs文件在:/usr/sbin/apxs</p>
+<h3 id="mpm配置"><a href="#mpm配置" class="headerlink" title="mpm配置"></a>mpm配置</h3><pre><code>httpd -l
+Compiled in modules:
+  core.c
+  prefork.c
+  http_core.c
+  mod_so.c
+</code></pre><p>输出里面的<span style="color:red">prefork.c</span>表示采用perfork方式，那么，我需要配置conf/httpd.conf中的perfork段。</p>
+<pre><code>&lt;IfModule prefork.c&gt;
+StartServers       8
+MinSpareServers         5
+MaxSpareServers     20
+ServerLimit       1000
+MaxClients       1000
+MaxRequestsPerChild  4000
+&lt;/IfModule&gt;
+</code></pre><ul>
+<li>StartServers: 服务器初始进程数</li>
+<li>MinSpareServers: 最小空闲进程数量</li>
+<li>MaxSpareServers: 最大空闲进程数量</li>
+<li>ServerLimit：服务器最大进程数</li>
+<li>MaxClients：最大客户请求数</li>
+<li>MaxConnectionsPerChild: 每个子进程可处理的请求数。每个子进程在处理了“MaxRequestsPerChild”个请求后将自 动销毁。0意味着无限，即子进程永不销毁。虽然缺省设为0可以使每个子进程处理更多的请求，但如果设成非零值也有两点重要的好处：<ol>
+<li>可防止意外的内存泄漏。</li>
+<li>在服务器负载下降的时侯会自动减少子进程数。</li>
+</ol>
+</li>
+</ul>
+<h2 id="4-PHP安装"><a href="#4-PHP安装" class="headerlink" title="4.PHP安装"></a>4.PHP安装</h2><h3 id="文件："><a href="#文件：" class="headerlink" title="文件："></a>文件：</h3><pre><code>wget http://cn2.php.net/distributions/php-5.6.15.tar.gz
+</code></pre><p>或：<br>    wget –ask-password <a href="http://acooly.wicp.net/project/software/php-5.6.15.tar.gz" target="_blank" rel="noopener">http://acooly.wicp.net/project/software/php-5.6.15.tar.gz</a></p>
+<h3 id="依赖："><a href="#依赖：" class="headerlink" title="依赖："></a>依赖：</h3><pre><code>yum install libxml2 -y
+yum install libxml2-devel -y
+</code></pre><h3 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h3><pre><code>./configure --prefix=/usr/local/php --with-config-file-path=/usr --with-mysql --with-apxs2=/usr/sbin/apxs --enable-sockets
+</code></pre><ul>
+<li><strong>–prefix=/usr/local/php</strong> : php的安装目录</li>
+<li><strong>–with-config-file-path=/usr</strong>： 指定默认的配置文件读取目录，如果MYSQL采用RPM方式安装，则需要设置为/usr</li>
+<li><strong>–with-mysql</strong>: 打开mysql支持</li>
+<li><strong>–with-apxs2=/usr/sbin/apxs</strong>：整合 apache，apxs功能是使用mod_so中的LoadModule指令，加载指定模块到 apache，要求 apache 要打开SO模块</li>
+<li><strong>–enable-sockets</strong>：打开 sockets 支持</li>
+</ul>
+<p>配置</p>
+<p>PHP安装完后，因为启用了apxs，所以会自动增加loadModule php…到httpd.conf文件中。原来的httpd.conf会备份为：httpd.conf.bak</p>
+<p>建立网站文件主目录：</p>
+<pre><code># mkdir /opt/www
+# chown -R apache:apache /opt/www
+</code></pre><p>使用vi或vim编辑httpd.con文件。进行调整配置如下：</p>
+<pre><code># 配置ServerName,防止启动告警找不到domain
+ServerName localhost:80
+
+# 修改主目录：
+DocumentRoot &quot;/opt/www&quot;
+
+# 增加php文件的match配置：
+&lt;FilesMatch \.php$&gt;
+    SetHandler application/x-httpd-php
+&lt;/FilesMatch&gt;
+
+&lt;FilesMatch &quot;\.ph(p[2-6]?|tml)$&quot;&gt;
+    SetHandler application/x-httpd-php
+&lt;/FilesMatch&gt;
+
+&lt;FilesMatch &quot;\.phps$&quot;&gt;
+    SetHandler application/x-httpd-php-source
+&lt;/FilesMatch&gt;
+
+# 修改目录默认文件:
+DirectoryIndex index.html index.php
+
+# 调整目录权限：
+&lt;Directory /&gt;
+    Options FollowSymLinks
+    AllowOverride None
+    Order deny,allow
+    Deny from all
+&lt;/Directory&gt;
+
+&lt;Directory &quot;/opt/www&quot;&gt;
+    Options Indexes FollowSymLinks
+    AllowOverride None
+    Order allow,deny
+    Allow from all
+&lt;/Directory&gt;
+</code></pre><h3 id="测试："><a href="#测试：" class="headerlink" title="测试："></a>测试：</h3><p>启动apache服务器</p>
+<pre><code>service httpd start
+</code></pre><p>创建PHP测试页面</p>
+<pre><code>cd /opt/www
+echo &quot;&lt;?php phpinfo(); ?&gt;&quot; &gt; test.php
+chown apache:apache test.php
+</code></pre><p>访问test.php页面</p>
+<pre><code>curl http://localhost/test.php
+    &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;DTD/xhtml1-transitional.dtd&quot;&gt;
+    &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;head&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+    ……
+</code></pre><p>也可以使用浏览器访问，会直观一些。</p>
+<h2 id="安装DZ3-1"><a href="#安装DZ3-1" class="headerlink" title="安装DZ3.1"></a>安装DZ3.1</h2><h3 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h3><ul>
+<li>版本：discuz 3.1.x</li>
+<li>版本论坛：<a href="http://www.discuz.net/forum.php?mod=collection&amp;action=view&amp;ctid=186" target="_blank" rel="noopener">http://www.discuz.net/forum.php?mod=collection&amp;action=view&amp;ctid=186</a></li>
+<li>文件：Discuz_X3.1_SC_UTF8.zip</li>
+</ul>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>安装前置条件为LAMP环境已搭建OK。</p>
+<pre><code>mkdir -p /opt/dz
+mv Discuz_X3.1_SC_UTF8.zip /opt/dz
+cd /opt/dz
+unzip Discuz_X3.1_SC_UTF8.zip
+cp -r upload/* /opt/www
+chown -R apache:apache /opt/www
+</code></pre><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>打开浏览器，输入服务器IP（端口默认80）根据向导完成配置。一般需要配置的就是数据库相关的配置。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://acooly.github.io/2016/03/01/linux/2015-12-19-linux_mysql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang pu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Acooly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/03/01/linux/2015-12-19-linux_mysql/" itemprop="url">CentOS6.x (Linux)MySQL安装配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-01T16:18:35+08:00">
+                2016-03-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>CentOS/Redhat</li>
+<li>MySQL-5.6.x</li>
+</ul>
+<h2 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h2><h3 id="获取文件"><a href="#获取文件" class="headerlink" title="获取文件"></a>获取文件</h3><pre><code>scp -P22000 root@wr-web1:/home/tools/MySQL-* ./
+scp -P22000 root@wr-web1:/home/tools/keepalived* ./
+</code></pre><h3 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h3><p>一般OS自带mysql相关的包会与独立安装的版本不一致，会造成安装冲突，所以一般会先卸载OS本身的mysql相关的软件。</p>
+<pre><code>yum remove mysql-libs*
+...
+
+# 安装服务器软件
+rpm -ivh MySQL-server-5.6.10-1.el6.x86_64.rpm
+...
+# 安装客户端软件
+rpm -ivh MySQL-client-5.6.10-1.el6.x86_64.rpm
+...
+</code></pre><h3 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h3><h4 id="修改ROOT密码"><a href="#修改ROOT密码" class="headerlink" title="修改ROOT密码"></a>修改ROOT密码</h4><blockquote>
+<p>安装完成后，默认的root密码在当前安装用户的主目录下的一个隐藏文件（/root/.mysql_secret）中，如下：</p>
+</blockquote>
+<pre><code>cat /root/.mysql_secret
+# The random password set for the root user at Thu Apr  9 00:42:50 2015 (local time): BCaeBWQ9
+</code></pre><p>修改root密码</p>
+<pre><code>service mysql start
+mysqladmin -u root -p qixQqr7l password
+...
+</code></pre><p>如果报错，则使用另外方法：直接使用初始密码登入后使用命令修改。</p>
+<pre><code>mysql -uroot -pqixQqr7l
+mysql&gt; set password for &apos;root&apos;@&apos;localhost&apos; = PASSWORD(&apos;123456&apos;);
+Query OK, 0 rows affected (0.00 sec)
+service mysql stop
+</code></pre><h4 id="找回密码"><a href="#找回密码" class="headerlink" title="找回密码"></a>找回密码</h4><pre><code>service mysql stop
+mysqld_safe --user=mysql --skip-grant-tables --skip-networking &amp;
+
+mysql -u root mysql
+mysql&gt; update user set password=password(&apos;newpassword&apos;) where user=&apos;root&apos;;
+mysql&gt; flush privileges;
+mysql&gt; quit
+
+service mysql stop
+service mysql start
+</code></pre><h4 id="密码转移"><a href="#密码转移" class="headerlink" title="密码转移"></a>密码转移</h4><p>在设置mysql密码时，特别是生产环境，一般会设置12位以上，包含字母，数字和特殊字符的组合字符串。在密码中包含!&amp;$()等特殊字符的时候，在使用命令行-p密码输入密码时，需要转义，转义字符为\, \!表示！。</p>
+<p>例如：</p>
+<blockquote>
+<p>密码为：1234!45678，在命令行中，应该表示为：<br>mysql -uroot -p1234\!45678</p>
+</blockquote>
+<h3 id="管理用户和权限"><a href="#管理用户和权限" class="headerlink" title="管理用户和权限"></a>管理用户和权限</h3><p>一般情况下，为提高系统安全性，强烈建议为您的应用程序创建普通权限用户，并对其权限进行控制。</p>
+<p><strong>创建用户</strong></p>
+<pre><code>例子
+# 创建用户，只有本机localhost访问权限
+create user &apos;zhangpu&apos;@&apos;localhost&apos; identified by &apos;123456&apos;;
+# 创建用户，可以再192.168.0.%范围访问
+create user &apos;zhangpu&apos;@&apos;192.168.0.%&apos; identified by &apos;123456&apos;;
+</code></pre><p><strong>授权</strong></p>
+<p>命令:GRANT privileges ON databasename.tablename TO ‘username‘@’host’ WITH GRANT OPTION</p>
+<blockquote>
+<p>说明: <br></p>
+<ol>
+<li>privileges - 用户的操作权限,如SELECT , INSERT , UPDATE 等(详细列表见该文最后面).如果要授予所的权限则使用ALL.;databasename - 数据库名,tablename-表名,如果要授予该用户对所有数据库和表的相应操作权限则可用<em>表示, 如</em>.*. <br></li>
+<li>如果需要授权的用户也可以给其他用户授权，则需要加上WITH GRANT OPTION</li>
+<li>也可以后跟identified by ‘<strong>**</strong>‘;直接修改密码</li>
+</ol>
+</blockquote>
+<pre><code>例子
+# 授权用户zhangpu访问appDb所有的表的所有权限
+grant all on [appDb].* to [zhangpu]@&quot;192.168.0.%&quot; identified by &apos;******&apos;;
+# 授权用户zhangpu查询appDb所有表的权限
+grant SELECT on [appDb].* to [zhangpu]@&quot;192.168.0.%&quot;
+</code></pre><h3 id="设置网络访问权限"><a href="#设置网络访问权限" class="headerlink" title="设置网络访问权限"></a>设置网络访问权限</h3><p> MYSQL的用户访问策略是需要指定用户从某IP可以访问那些权限。具体用法请参考grant命令。这里为了简单起见，直接设置root用户在整个局域内(10.10.10.*)都可以访问数据库。</p>
+<pre><code>mysql -uroot -p
+******
+mysql&gt; GRANT ALL PRIVILEGES ON *.* TO root@&apos;10.10.10.%&apos; IDENTIFIED BY &apos;password&apos; WITH GRANT OPTION;
+mysql&gt;FLUSH PRIVILEGES;
+</code></pre><h4 id="MYSQL配置参数"><a href="#MYSQL配置参数" class="headerlink" title="MYSQL配置参数"></a>MYSQL配置参数</h4><p>拷贝配置文件到/etc目录(全局配置)</p>
+<pre><code>mv /usr/my.cnf /etc/
+</code></pre><p>使用vim打开/etc/my.cnf进行配置如下：</p>
+<pre><code>[mysqld]
+# close show database for normal users
+skip-show-database=ON
+# 表名不取法大小写
+lower_case_table_names=1
+# 服务器端编码
+character-set-server=utf8
+</code></pre><p>如果需要配置半同步，则需要设置以下配置</p>
+<pre><code># MYSQL_DB_MASTER1设置为1，MYSQL_DB_MASTER2设置为2  
+server_id=1
+log_bin=mysql-bin
+</code></pre><blockquote>
+<p>注意：如果更新了主目录，需要进行一些目录权限操作和增加锁文件的软连接。详细操作请参考：<a href="http://acooly.iteye.com/blog/1835581" target="_blank" rel="noopener">MySQL-HA Keepalived Master-Master半同步</a></p>
+</blockquote>
+<p>完成配置后，wq保存退出，重新启动mysql服务进行验证</p>
+<pre><code>service mysql restart
+</code></pre><p>– 建立复制用户replication，允许内网内其他机器（访问本机所有数据库）<br>grant replication  slave on <em>.</em> to ‘replication‘@’192.168.%.%’ identified by ‘replication’;</p>
+<p>– 查看master的bin-log状态，用户设置SLAVE同步的起点<br>mysql&gt; show master status;  </p>
+<p>change master to master_host=’192.168.239.234’,master_user=’replication’,master_password=’replication’,master_log_file=’mysql-bin.000002’,master_log_pos=335;</p>
+<h4 id="迁移mysql主目录"><a href="#迁移mysql主目录" class="headerlink" title="迁移mysql主目录"></a>迁移mysql主目录</h4><p>mysql安装后，默认的数据存储路径在/var/lib/mysql下。这里修改为/data/mysql</p>
+<h5 id="迁移主目录"><a href="#迁移主目录" class="headerlink" title="迁移主目录"></a>迁移主目录</h5><pre><code>service mysql stop
+mkdir /data/mysql
+cp -r /var/lib/mysql/* /data/mysql
+chown -R mysql:mysql /data/mysql
+#为/data/mysql/mysql.sock建立指向/var/lib/mysql/mysql.sock的软连接
+ln -s /data/mysql/mysql.sock /var/lib/mysql/mysql.sock
+</code></pre><h5 id="修改主配置文件"><a href="#修改主配置文件" class="headerlink" title="修改主配置文件"></a>修改主配置文件</h5><pre><code>datadir = /data/mysql
+socket = /data/mysql/mysql.sock
+user = mysql
+# port = .....
+# server_id = .....
+</code></pre><h5 id="启动验证"><a href="#启动验证" class="headerlink" title="启动验证"></a>启动验证</h5><pre><code>service mysql start
+mysql -uroot -p
+******
+mysql&gt;
+</code></pre><h5 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h5><p>最可能出现的问题（如果你是Redhat6.x或CentOS6.x）：selinux 照成服务无法正常启动，报错：</p>
+<blockquote>
+<p>Starting MySQL. ERROR! The server quit without updating PID file (/data/mysql/xxxxx.pid).</p>
+</blockquote>
+<p>验证问题方法：</p>
+<pre><code>setenforce 0
+service mysql start
+ Starting MySQL. SUCCESS!
+</code></pre><p>如果能正常启动，解决问题，就确定是selinux造成的问题了。</p>
+<ul>
+<li><p>解决办法1：直接禁用。<br>vim /etc/selinux/config 修改：SELINUX=disabled<br>保存后，重启操作系统生效</p>
+</li>
+<li><p>解决方案2：配置selinux支持mysql访问相关端口和文件系统<br>本人比较懒，给个连接自己研究哈（或者google: selinux mysql）：<br><a href="https://blogs.oracle.com/jsmyth/entry/selinux_and_mysql" target="_blank" rel="noopener">https://blogs.oracle.com/jsmyth/entry/selinux_and_mysql</a></p>
+</li>
+</ul>
+<h2 id="性能调优"><a href="#性能调优" class="headerlink" title="性能调优"></a>性能调优</h2><h3 id="查询缓存"><a href="#查询缓存" class="headerlink" title="查询缓存"></a>查询缓存</h3><p>参考：MYSQL查询缓存</p>
+<h3 id="特别参数"><a href="#特别参数" class="headerlink" title="特别参数"></a>特别参数</h3><h4 id="sort-buffer-size"><a href="#sort-buffer-size" class="headerlink" title="sort_buffer_size"></a>sort_buffer_size</h4><pre><code>#linux下默认256K，推荐256K-2M
+sort_buffer_size = 2M
+</code></pre><ol>
+<li>Sort_Buffer_Size 是一个connection级参数，在每个connection第一次需要使用这个buffer的时候，一次性分配设置的内存。</li>
+<li>Sort_Buffer_Size 并不是越大越好，由于是connection级的参数，过大的设置+高并发可能会耗尽系统内存资源。</li>
+<li>文档说“On Linux, there are thresholds of 256KB and 2MB where larger values may significantly slow down memory allocation”</li>
+</ol>
+<h3 id="Innodb引擎优化"><a href="#Innodb引擎优化" class="headerlink" title="Innodb引擎优化"></a>Innodb引擎优化</h3><h4 id="innodb-buffer-pool-size"><a href="#innodb-buffer-pool-size" class="headerlink" title="innodb_buffer_pool_size"></a>innodb_buffer_pool_size</h4><blockquote>
+<p>例如：innodb_buffer_pool_size = 6G，主要作用是缓存innodb表的索引，数据，插入数据时的缓冲,默认128M，专用服务器一般设置为物理内存的70-80%，非专用内存设置为可用内容的60%-80%（安全点，别让物理内内存不够而使用swap空间导致操作系统慢，一切就完了）</p>
+</blockquote>
+<p>合理规划该参数大小非常重要，下面是示例：</p>
+<p>假设是一台单独给 MySQL 使用的主机，物理内存总大小为 8G，MySQL 最大连接数为 500，同时还使用 了 MyISAM 存储引擎，这时候我们的整体内存该如何分配呢？<br>内存分配为如下几大部分：</p>
+<ul>
+<li>系统使用，假设预留 800M；</li>
+<li>线程独享，约 2GB  = 500  * (1MB  + 1MB  + 1MB  + 512KB  + 512KB)，组成大概如下:sort_buffer_size：1MB join_buffer_size：1MB read_buffer_size：1MB read_rnd_buffer_size：512KB thread_statck：512KB</li>
+<li>MyISAM  Key Cache，假设大概为 1.5GB；</li>
+<li>Innodb Buffer  Pool 最大可用量：8GB  800MB  2GB  1.5GB = 3.7GB；</li>
+</ul>
+<p>分析Innodb的Buffer Pool使用情况是否正常高效：</p>
+<pre><code>show status like  &apos;Innodb_buffer_pool_%&apos;;
++-----------------------------------+-------+
+| Variable_name    | Value |
++-----------------------------------+-------+
+| Innodb_buffer_pool_pages_data     | 70    |
+| Innodb_buffer_pool_pages_dirty    | 0    |
+| Innodb_buffer_pool_pages_flushed | 0    |
+| Innodb_buffer_pool_pages_free    | 1978    |
+| Innodb_buffer_pool_pages_latched | 0    |
+| Innodb_buffer_pool_pages_misc     | 0    |
+| Innodb_buffer_pool_pages_total    | 2048    |
+| Innodb_buffer_pool_read_ahead_rnd  | 1    |
+| Innodb_buffer_pool_read_ahead_seq  | 0    |
+| Innodb_buffer_pool_read_requests | 329    |
+| Innodb_buffer_pool_reads    | 19    |
+| Innodb_buffer_pool_wait_free    | 0    |
+| Innodb_buffer_pool_write_requests | 0    |
++-----------------------------------+-------+
+</code></pre><blockquote>
+<p>从上面的值我们可以看出总共 2048  pages，还有 1978 是 Free 状态的仅仅只有 70 个 page 有数据， read 请求 329 次，其中有 19 次所请求的数据在 buffer  pool 中没有，也就是说有 19 次是通过读取物理 磁盘来读取数据的，所以很容易也就得出了 Innodb Buffer  Pool 的 Read 命中率大概在为：(329 - 19)/ 329  * 100%  = 94.22%。</p>
+</blockquote>
+<p>当然，通过上面的数据，我们还可以分析出 write 命中率，可以得到发生了多少次 read_ahead_rnd，多少次 read_ahead_seq，发生过多少次 latch，多少次因为 Buffer 空间大小不足而产 生 wait_free 等等。</p>
+<p>单从这里的数据来看，我们设置的 Buffer  Pool 过大，仅仅使用 70  / 2048  * 100%  = 3.4%。</p>
+<h4 id="innodb-additional-mem-pool-size"><a href="#innodb-additional-mem-pool-size" class="headerlink" title="innodb_additional_mem_pool_size"></a>innodb_additional_mem_pool_size</h4><pre><code># 默认1M，推荐2-8M
+innodb_additional_mem_pool_size = 10M
+</code></pre><blockquote>
+<ul>
+<li>除了缓存表数据和索引外,可以为操作所需的其他内部项分配缓存来提升InnoDB的性能。这些内存就可以通过此参数来分配。推荐此参数至少设置为2-10MB(最大值时可以支持500张表每表几十个字段)，实际上，是需要根据项目的InnoDB表的数目相应地增加</li>
+<li>系统默认值仅有 1MB。当 然，如果 Innodb 实际运行过程中出现了实际需要的内存比设置值更大的时候，Innodb 也会继续通过 OS 来申请内存空间，并且会在 MySQL 的错误日志中记录一条相应的警告信息让我们知晓。</li>
+</ul>
+</blockquote>
+<h4 id="innodb-log-buffer-size"><a href="#innodb-log-buffer-size" class="headerlink" title="innodb_log_buffer_size"></a>innodb_log_buffer_size</h4><pre><code># 默认1M，推荐8M
+innodb_log_buffer_size = 8M
+</code></pre><p>顾名思义，这个参数就是用来设置 Innodb 的 Log Buffer 大小的，系统默认值为 1MB。Log  Buffer 的主要作用就是缓冲 Log 数据，提高写 Log 的 IO 性能。一般来说，如果你的系统不是写负载非常高且以 大事务居多的话，8MB 以内的大小就完全足够了。</p>
+<p>通过系统状态参数提供的性能统计数据来分析 Log 的使用情况：</p>
+<pre><code>show status like &apos;innodb_log%&apos;;
++---------------------------+-------+
+| Variable_name    | Value |
++---------------------------+-------+
+| Innodb_log_waits     | 0    |
+| Innodb_log_write_requests | 6    |
+| Innodb_log_writes     | 2    |
++---------------------------+-------+
+</code></pre><p>通过这三个状态参数我们可以很清楚的看到 Log Buffer 的等待次数等性能状态</p>
+<h4 id="innodb-log-file-size"><a href="#innodb-log-file-size" class="headerlink" title="innodb_log_file_size"></a>innodb_log_file_size</h4><pre><code># 推荐256M
+innodb_log_file_size=256M
+</code></pre><p>此参数确定数据日志文件的大小，以M为单位，更大的设置可以提高性能，但也会增加恢复故障数据库所需的时间。</p>
+<h4 id="innodb-log-files-in-group"><a href="#innodb-log-files-in-group" class="headerlink" title="innodb_log_files_in_group"></a>innodb_log_files_in_group</h4><pre><code>innodb_log_files_in_group = 2
+</code></pre><p>为提高性能，MySQL可以以循环方式将日志文件写到多个文件。</p>
+<h4 id="innodb-flush-log-at-trx-commit"><a href="#innodb-flush-log-at-trx-commit" class="headerlink" title="innodb_flush_log_at_trx_commit"></a>innodb_flush_log_at_trx_commit</h4><pre><code>#默认为1，为提高性能可调整为0或2
+innodb_flush_log_at_trx_commit=1
+</code></pre><ul>
+<li>innodb_flush_log_at_trx_commit = 0，Innodb 中的Log Thread 没隔1 秒钟会将log buffer中的数据写入到文件，同时还会通知文件系统进行文件同步的flush 操作，保证数据确实已经写入到磁盘上面的物理文件。但是，每次事务的结束（commit 或者是rollback）并不会触发Log Thread 将log buffer 中的数据写入文件。所以，当设置为0 的时候，当MySQL Crash 和OS Crash 或者主机断电之后，最极端的情况是丢失1 秒时间的数据变更。</li>
+<li>innodb_flush_log_at_trx_commit = 1，这也是Innodb 的默认设置。我们每次事务的结束都会触发Log Thread 将log buffer 中的数据写入文件并通知文件系统同步文件。这个设置是最安全的设置，能够保证不论是MySQL Crash 还是OS Crash 或者是主机断电都不会丢失任何已经提交的数据。</li>
+<li>innodb_flush_log_at_trx_commit = 2，当我们设置为2 的时候，Log Thread 会在我们每次事务结束的时候将数据写入事务日志，但是这里的写入仅仅是调用了文件系统的文件写入操作。而我们的文件系统都是有缓存机制的，所以Log Thread 的这个写入并不能保证内容真的已经写入到物理磁盘上面完成持久化的动作。文件系统什么时候会将缓存中的这个数据同步到物理磁盘文件Log Thread 就完全不知道了。所以，当设置为2 的时候，MySQL Crash 并不会造成数据的丢失，但是OS Crash 或者是主机断电后可能丢失的数据量就完全控制在文件系统上了</li>
+</ul>
+<h4 id="innodb-data-file-path"><a href="#innodb-data-file-path" class="headerlink" title="innodb_data_file_path"></a>innodb_data_file_path</h4><pre><code>innodb_data_file_path = ibdata1:1024M:autoextend
+</code></pre><p>参数的名字和实际的用途有点出入，它不仅指定了所有InnoDB数据文件的路径，还指定了初始大小分配，最大分配以及超出起始分配界线时是否应当增加文件的大小。此参数的一般格式如下:<br>path-to-datafile:size-allocation[:autoextend[:max-size-allocation]] </p>
+<h4 id="innodb-file-per-table"><a href="#innodb-file-per-table" class="headerlink" title="innodb_file_per_table"></a>innodb_file_per_table</h4><pre><code>// 默认为0,建议打开
+innodb_file_per_table=1
+</code></pre><p>InnoDB为独立表空间模式，每个数据库的每个表都会生成一个数据空间，独立文件。</p>
+<p>优点：</p>
+<ol>
+<li>每个表都有自已独立的表空间。</li>
+<li>每个表的数据和索引都会存在自已的表空间中。</li>
+<li>可以实现单表在不同的数据库中移动。</li>
+<li>空间可以回收（除drop table操作处，表空不能自已回收）</li>
+</ol>
+<p>补充：</p>
+<ul>
+<li>Drop table操作自动回收表空间，如果对于统计分析或是日值表，删除大量数据后可以通过:alter table TableName engine=innodb;回缩不用的空间。</li>
+<li>对于使innodb-plugin的Innodb使用turncate table也会使空间收缩。</li>
+<li>对于使用独立表空间的表，不管怎么删除，表空间的碎片不会太严重的影响性能，而且还有机会处理。</li>
+</ul>
+<p>缺点：<br>单表增加过大，如超过100个G</p>
+<blockquote>
+<p>共享表空间在Insert操作上少有优势。其它都没独立表空间表现好。当启用独立表空间时，请合理调整一 下：innodb_open_files 。</p>
+</blockquote>
+<pre><code>mysql&gt; show variables like &apos;%per_table%&apos;;
++-----------------------+-------+
+| Variable_name         | Value |
++-----------------------+-------+
+| innodb_file_per_table | ON    |
++-----------------------+-------+
+1 row in set (0.00 sec)
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.jpeg"
+                alt="zhang pu" />
+            
+              <p class="site-author-name" itemprop="name">zhang pu</p>
+              <p class="site-description motion-element" itemprop="description">本质是个程序猿，会点产品，懂点业务，有帮可信赖的志同道合的同伴，做点组织管理，基础架构和应用架构的事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://bohr.me/" title="qiubo's life" target="_blank">qiubo's life</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.1119e.com/" title="投资1119e" target="_blank">投资1119e</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.pccb.com" title="普资金服" target="_blank">普资金服</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhang pu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

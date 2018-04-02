@@ -1,0 +1,2355 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本质是个程序猿，会点产品，懂点业务，有帮可信赖的志同道合的同伴，做点组织管理，基础架构和应用架构的事">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Acooly&#39;s Blog">
+<meta property="og:url" content="http://acooly.github.io/page/3/index.html">
+<meta property="og:site_name" content="Acooly&#39;s Blog">
+<meta property="og:description" content="本质是个程序猿，会点产品，懂点业务，有帮可信赖的志同道合的同伴，做点组织管理，基础架构和应用架构的事">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Acooly&#39;s Blog">
+<meta name="twitter:description" content="本质是个程序猿，会点产品，懂点业务，有帮可信赖的志同道合的同伴，做点组织管理，基础架构和应用架构的事">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://acooly.github.io/page/3/"/>
+
+
+
+
+
+  <title>Acooly's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Acooly's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">coder live</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://acooly.github.io/2016/11/21/java/2016-11-07-非递归快速构建树型结构/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang pu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Acooly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/21/java/2016-11-07-非递归快速构建树型结构/" itemprop="url">Java非递归快速构建树型结构</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-21T00:11:22+08:00">
+                2016-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>通过平铺的原始树形结构数据，快熟构建节点的父子管理，完成树型结构数据的构建，一般在配合前段树形机构显示中有特殊需求的情况中使用。如果需要提出一个父子结构数据中部分数据，如果利用hibernate的级联查询，是很方面获取树形结构的全量，但要剔除部分数据就麻烦了，而且hinernate执行的时候是多个SQL，效率也差一些（不考虑缓存哈）。</p>
+<h1 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h1><h2 id="原始数据结构"><a href="#原始数据结构" class="headerlink" title="原始数据结构"></a>原始数据结构</h2><p>原始数据结构，一般是数据库中的多级表。如下：</p>
+<p>ID,PID,NAME….</p>
+<h2 id="目标数据结构"><a href="#目标数据结构" class="headerlink" title="目标数据结构"></a>目标数据结构</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    id:1</span><br><span class="line">    name:'NAME1',</span><br><span class="line">    children:[</span><br><span class="line">        &#123;id:2,name:'name2',children:[...]&#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 快速构建树结构</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 非递归，使用2次循环完成构建。</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> zhangpu</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QuickTreeBuilder</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// 构建原始数据：这里为了简便，原始数据集合使用的也是Node对象，</span></span><br><span class="line">		<span class="comment">// 实际情况可以是其他任意entity，只需要在后面构建树时进行转化就OK</span></span><br><span class="line">		List&lt;Node&gt; orginals = <span class="keyword">new</span> ArrayList&lt;Node&gt;();</span><br><span class="line">		<span class="comment">// parentId = 0 表示顶层，你也可以构建原始数据parentId=null是顶层，由你决定。</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++) &#123;</span><br><span class="line">			orginals.add(<span class="keyword">new</span> Node(i, i - <span class="number">1</span>, <span class="string">"name"</span> + i));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 构建一个Map,把所有原始数据的ID作为Key,原始数据对象作为VALUE</span></span><br><span class="line">		Map&lt;Integer, Node&gt; dtoMap = <span class="keyword">new</span> HashMap&lt;Integer, Node&gt;();</span><br><span class="line">		<span class="keyword">for</span> (Node node : orginals) &#123;</span><br><span class="line">			<span class="comment">// 如果原始数据对象不是Node,这里就可以直接写个conver转化</span></span><br><span class="line">			<span class="comment">// 原始数据对象为Node，放入dtoMap中。</span></span><br><span class="line">			dtoMap.put(node.getId(), node);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		List&lt;Node&gt; result = <span class="keyword">new</span> ArrayList&lt;Node&gt;();</span><br><span class="line">		<span class="keyword">for</span> (Map.Entry&lt;Integer, Node&gt; entry : dtoMap.entrySet()) &#123;</span><br><span class="line">			Node node = entry.getValue();</span><br><span class="line">			<span class="keyword">if</span> (node.getParentId() == <span class="number">0</span>) &#123;</span><br><span class="line">				<span class="comment">// 如果是顶层节点，直接添加到结果集合中</span></span><br><span class="line">				result.add(node);</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="comment">// 如果不是顶层节点，找的起父节点，然后添加到父节点的子节点中</span></span><br><span class="line">				<span class="keyword">if</span> (dtoMap.get(node.getParentId()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">					dtoMap.get(node.getParentId()).addChild(node);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 如果有排序需求，可以在最后对输出的结构进行排序</span></span><br><span class="line">		<span class="comment">// 打印结果数据</span></span><br><span class="line">		System.out.println(result);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">		<span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">		<span class="keyword">private</span> <span class="keyword">int</span> parentId;</span><br><span class="line">		<span class="keyword">private</span> String name;</span><br><span class="line">		<span class="keyword">private</span> List&lt;Node&gt; children = <span class="keyword">new</span> ArrayList&lt;Node&gt;();</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> id, <span class="keyword">int</span> parentId, String name)</span> </span>&#123;</span><br><span class="line">			<span class="keyword">super</span>();</span><br><span class="line">			<span class="keyword">this</span>.id = id;</span><br><span class="line">			<span class="keyword">this</span>.parentId = parentId;</span><br><span class="line">			<span class="keyword">this</span>.name = name;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addChild</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">			<span class="keyword">this</span>.children.add(node);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			<span class="keyword">return</span> id;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">			<span class="keyword">this</span>.id = id;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getParentId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			<span class="keyword">return</span> parentId;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setParentId</span><span class="params">(<span class="keyword">int</span> parentId)</span> </span>&#123;</span><br><span class="line">			<span class="keyword">this</span>.parentId = parentId;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			<span class="keyword">return</span> name;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">			<span class="keyword">this</span>.name = name;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">public</span> List&lt;QuickTreeBuilder.Node&gt; getChildren() &#123;</span><br><span class="line">			<span class="keyword">return</span> children;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setChildren</span><span class="params">(List&lt;QuickTreeBuilder.Node&gt; children)</span> </span>&#123;</span><br><span class="line">			<span class="keyword">this</span>.children = children;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="string">"&#123;id:"</span> + id + <span class="string">", parentId:"</span> + parentId + <span class="string">", name:"</span> + name + <span class="string">", children:"</span> + children + <span class="string">"&#125;"</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://acooly.github.io/2016/10/23/java/2016-05-08-java非对称加密(二)-证书及操作/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang pu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Acooly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/23/java/2016-05-08-java非对称加密(二)-证书及操作/" itemprop="url">Java非对称加密开发(二)-证书及操作</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-23T21:21:47+08:00">
+                2016-10-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>完成基础理论的梳理后，我们首要的就是要进行一系列证书相关操作，为后续的开发做准备，这里主要描述证书操作的几种常规和常用操作，如：申请证书，自签发放证书，合成pfx等。</p>
+<p>本文主要是通过工具对证书相关的操作进行收集和整理，主选工具为openssl这个比较通用写，关于keytool的操作，因为只是java首选，我们放一下。</p>
+<h2 id="申请证书"><a href="#申请证书" class="headerlink" title="申请证书"></a>申请证书</h2><p>申请证书是最常用的证书相关操作，一般网站需要向CA及代理机构申请证书时，我们需要先进行一些操作，然后提交相关资料和文件给CA机构，待缴钱钱和处理后，CA在发放对应的证书回来。</p>
+<p>前文理论部分介绍过，证书是CA机构对我们的实体信息及公钥的签名证明文件，所以我们申请证书时，需要提交我们的实体信息及公钥给CA机构，怎么提交的，业界一般采用生成一种叫CSR的文件提交给CA机构。</p>
+<blockquote>
+<p>CSR是Cerificate Signing Request的英文缩写，即证书请求文件，也就是证书申请者在申请数字证书时由CSP(加密服务提供者, 就是自己通过openssl生成的)在生成私钥的同时也生成证书请求文件，证书申请者只要把CSR文件提交给证书颁发机构后，证书颁发机构使用其根证书私钥签名就生成了证书公钥文件，也就是颁发给用户的证书。<br>通常CSR文件是在拿到参考码、授权码进行证书签发和下载时，通过网页提交给CA的。</p>
+</blockquote>
+<p>怎么做！？我们以openssl为例介绍如下：</p>
+<ul>
+<li><strong>创建公私秘钥对</strong></li>
+</ul>
+<p>前面理论介绍过，目前证书相关技术和操作的核心其实是非对称加密，所以生成证书前，我们先生成一对非对称秘钥对。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个1024位（1024/8=256字节）长度秘钥，如果觉得不安全可以使用2048，但是速度回慢很多。</span></span><br><span class="line">openssl genrsa -out private.pem 1024</span><br><span class="line"></span><br><span class="line"><span class="comment"># (可选)生成私钥对应的公钥，其实不必要，因为可以直接生成证书请求文件，然后拿到证书后，证书里面就有对应的公钥。为了看起舒服，先生成一个阔来。</span></span><br><span class="line">openssl rsa -<span class="keyword">in</span> private.pem -pubout -out public.pem</span><br></pre></td></tr></table></figure>
+<p>OK,上面命令成功后，当前目录就有了2个文件: private.pem和public.pem</p>
+<ul>
+<li><strong>生成证书申请文件CSR</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 直接使用签名的私钥生成对应的证书申请请求文件，请根据提示设置实体信息及保护密码</span></span><br><span class="line">openssl req -new -out server.csr -key private.pem</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：</p>
+<ol>
+<li>需要依次输入国家，地区，组织，email。最重要的是有一个common name，可以写你的名字或者域名。如果为了网站申请https，这个必须和域名吻合（可以支持泛域名），否则会引发浏览器警报。</li>
+<li>如果你准备后续使用直接生成的CA证书(ca.cer,请参考后续节点说明)自签名发放证书，注意这里的组织名称（O）与ca.cer的组织名称设置一致，否则会提示错误。</li>
+</ol>
+</blockquote>
+<p>OK，该不是完成后，就会生成一个server.csr文件，请提交该文件个CA机构并缴钱钱，然后等CA完成后发放证书给你~<br>    如果你下自己发放一个自签名证书，请继续~~</p>
+<h2 id="自签名证书发放"><a href="#自签名证书发放" class="headerlink" title="自签名证书发放"></a>自签名证书发放</h2><p>在开发和测试相关应用的时候，我们一般还没有申请正式的CA证书，所以，一般情况下，我们会使用自己先制造一个CA的根证书和私钥来作为CA身份，然后在对我们的证书申请文件进行签名生成自签名的证书。</p>
+<p>接上节中生成的CRS文件：server.csr</p>
+<ul>
+<li><strong>生成CA证书及秘钥</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过命令直接生成一个CA的证书及私钥，用于后续直签名证书生成</span></span><br><span class="line">openssl req -new -x509 -keyout ca.key -out ca.cer</span><br></pre></td></tr></table></figure>
+<p>成功后，生成2个文件。ca.cer为证书文件; ca.key为pem编码的私钥。</p>
+<ul>
+<li><strong>生成自签名证书</strong></li>
+</ul>
+<p>使用上面生成的CA证书和私钥，对CSR文件生成我们的自签名证书。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl ca -<span class="keyword">in</span> server.csr -out server.cer -cert ca.cer -keyfile ca.key</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这里如果出现错误：I am unable to access the ./demoCA/newcerts directory./demoCA/newcerts: No such file or directory,则需要处理：</p>
+<ol>
+<li>在当前目录建立 demoCA/newcerts目录</li>
+<li>创建空文件：demoCA/index.txt</li>
+<li>创建文件：demoCA/serial，并首行写入01，第二行空一行。</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>或者，请修改下openssl.conf里面对应的CA Default配置段。</p>
+</blockquote>
+<p>OK，成功后，输出我们的证书文件：server.cer</p>
+<p>至此，我们已经获得了证书文件server.cer, 无论你是从CA申请的还是自签名的，我们都完成了。你可以使用该文件去配置你web服务器的https访问了，例如：apache/nginx等。</p>
+<h2 id="合成pfx文件"><a href="#合成pfx文件" class="headerlink" title="合成pfx文件"></a>合成pfx文件</h2><p>如果你面临一个case，需要使用非对称加密来完成与你客户之间数据的通讯和签名，但是因成本考虑，你们都没有购买专业授信的加密机（秘钥不落地）, 而你的客户也并没有管理和维护证书的成本考虑，那么比较合适的方案是：你采用文件方式管理和发放证书给你的客户，并交换你们的公钥，然后加密数据在传输。</p>
+<p>你准备怎么给你的客户发放证书呢？！当然你需要为客户生成证书，同时发放对应的私钥给你的客户，我们一般采用keystore的方式交互给对方。常用的有jks和pkcs12(pfx)两种方式，其中pfx比较通用，jks一般是java体系使用。</p>
+<p>现在我们，假设前面生产的证书及对应私钥就是为客户生成，并准备发放给客户的，那么我们现在需要把证书和私钥合成为pfx文件，并设置一个保护密码，然后再交付给客户。</p>
+<ol>
+<li>生成pkcs12文件，但不包含CA证书：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl pkcs12 -<span class="built_in">export</span> -inkey private.pem -<span class="keyword">in</span> server.cer  -out server.pfx</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>生成pkcs12文件，包含CA证书：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl pkcs12 -<span class="built_in">export</span> -inkey private.pem -<span class="keyword">in</span> server.cer -CAfile ca.cer -chain -out server.pfx</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>PKCS转换为PEM: openssl pkcs12 -in myserver.pfx -out myserver.pem -nodes</p>
+</blockquote>
+<p>OK, 我们为客户生成了server.pfx,现在可以交付给客户了，如果你设置了保护密码，请记得告诉他密码。同时不要忘记交付给他你的公钥，否则无法加密发送的数据~</p>
+<h2 id="其他OpenSSL常用操作"><a href="#其他OpenSSL常用操作" class="headerlink" title="其他OpenSSL常用操作"></a>其他OpenSSL常用操作</h2><p><strong>查看pfx</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl pkcs12 -info -<span class="keyword">in</span> openapi.pfx</span><br></pre></td></tr></table></figure>
+<p><strong>查看x509证书</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -noout -text -<span class="keyword">in</span> acooly.cn.crt</span><br></pre></td></tr></table></figure>
+<p><strong>查看秘钥</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl rsa -noout -text -<span class="keyword">in</span> acooly.cn.key</span><br></pre></td></tr></table></figure>
+<p><strong>查看CSR</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl req -noout -text -<span class="keyword">in</span> acooly.cn.csr</span><br></pre></td></tr></table></figure>
+<h2 id="JKS常用操作"><a href="#JKS常用操作" class="headerlink" title="JKS常用操作"></a>JKS常用操作</h2><h3 id="生成keystore"><a href="#生成keystore" class="headerlink" title="生成keystore"></a>生成keystore</h3><p>命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -genkey -<span class="built_in">alias</span> openapi -keyalg RSA -keysize 1024 -validity 3650 -keystore openapi.jks</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>以上命令生成一个1024位，有效期为10年的keystore,别名为openapi</p>
+</blockquote>
+<h3 id="查看keystore"><a href="#查看keystore" class="headerlink" title="查看keystore"></a>查看keystore</h3><p>keytool -list -v -alias openapi -keystore openapi.jks</p>
+<h3 id="pfx转换jks"><a href="#pfx转换jks" class="headerlink" title="pfx转换jks"></a>pfx转换jks</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -importkeystore -v  -srckeystore acooly.cn.pfx -srcstoretype pkcs12 -srcstorepass 123456 -destkeystore acooly.cn.keystore -deststoretype jks -deststorepass 123456</span><br></pre></td></tr></table></figure>
+<ul>
+<li>-importkeystore: 导入密钥库，通过格式设定，我们可以将PKCS#12文件转换为JKS格式。</li>
+<li>-v: 显示详情</li>
+<li>-srckeystore: 源密钥库，这里是zlex.pfx</li>
+<li>-srcstoretype: 源密钥库格式，这里为pkcs12</li>
+<li>-srcstorepass: 源密钥库密码，这里为123456</li>
+<li>-destkeystore: 目标密钥库，这里为zlex.keystore</li>
+<li>-deststoretype: 目标密钥库格式，这里为jks，默认值也如此</li>
+<li>-deststorepass: 目标密钥库密码，这里为123456</li>
+</ul>
+<p>通过这个操作，我们能够获得所需的密钥库文件keystore。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://acooly.github.io/2016/05/16/java/2016-05-07-java非对称加密(一)-基础与理论/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang pu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Acooly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/05/16/java/2016-05-07-java非对称加密(一)-基础与理论/" itemprop="url">Java非对称加密开发(一)-基础与理论</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-16T15:53:41+08:00">
+                2016-05-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>本文主要以基础逻辑方式整理下JAVA非对称加密开发需要的理论基础知识，并非详细介绍每个提及的技术及原理。主要解答开发中这些实体的关系，众多的扩展名究竟TMD什么意思！包括：jks,pfx,pem,cet,crt,key,csr等扩展名。</p>
+<h2 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h2><p>非对称加密算法（asymmetric cryptographic algorithm）又名“公开密钥加密算法”，非对称加密算法需要两个密钥：公开密钥（publickey）和私有密钥（privatekey）。公开密钥与私有密钥是一对，如果用公开密钥对数据进行加密，只有用对应的私有密钥才能解密；如果用私有密钥对数据进行加密，那么只有用对应的公开密钥才能解密。因为加密和解密使用的是两个不同的密钥，所以这种算法叫作非对称加密算法。</p>
+<p>最常用的非对称加密算法：RSA。</p>
+<p>非对称加密的主要特点：</p>
+<ol>
+<li>数据加密：公钥加密，需要对应的私钥解密。保证私密性</li>
+<li>数据签名：私钥加密，需要对应的公钥验签。保证完整性和不被篡改</li>
+<li>相对于对称加密，安全性加高，速度较慢。</li>
+</ol>
+<p>一般主要应用场景为双向通讯加密和签名，双方如果采用非对称加密传输数据，则必须先交换公钥，正因为要保证交换公钥的安全可靠，所以才会后后面的证书，keystore等相关东西需要了解。</p>
+<h2 id="Keystore"><a href="#Keystore" class="headerlink" title="Keystore"></a>Keystore</h2><h3 id="什么是keystore"><a href="#什么是keystore" class="headerlink" title="什么是keystore"></a>什么是keystore</h3><p>keystore貌似一个装秘钥的容器，里面可以装一组组的秘钥。我们可以从keystore中导出对应的秘钥（证书，私钥等），我理解它存在意义主要是便于管理非对称秘钥对，同时便于私钥的传递（虽然说有秘钥不落地的说法，但很多场景中还是需要传递和发放的。）</p>
+<p>另外一种比较容易理解的说法，keystore是一个证书库（其实证书我理解也是秘钥），所有的数字证书是以一条一条(采用别名区别)的形式存入证书库的中，证书库中的一条证书包含该条证书的私钥，公钥和对应的数字证书的信息。证书库中的一条证书可以导出数字证书文件，数字证书文件只包括主体信息和对应的公钥，它可以用一个密码作为证书库的保护钥匙.</p>
+<p>在Java体系中，keystore文件一般由keytool工具创建，同时Java安全API中也有对应的Keystore.class专门对keystore做了抽象和封装，Javadoc说明如下：</p>
+<blockquote>
+<p>This class represents a storage facility for cryptographic keys and certificates.<br>A KeyStore manages different types of entries. Each type of entry implements the KeyStore.Entry interface. Three basic KeyStore.Entry implementations are provided:</p>
+</blockquote>
+<blockquote>
+<p>KeyStore.PrivateKeyEntry<br>1个加密的非对称私钥，并附带一个对应的的公钥的证书链<br>This type of entry holds a cryptographic PrivateKey, which is optionally stored in a protected format to prevent unauthorized access. It is also accompanied by a certificate chain for the corresponding public key.</p>
+</blockquote>
+<blockquote>
+<p>Private keys and certificate chains are used by a given entity for self-authentication. Applications for this authentication include software distribution organizations which sign JAR files as part of releasing and/or licensing software.</p>
+</blockquote>
+<blockquote>
+<p>KeyStore.SecretKeyEntry<br>存放一个加密的对称加密的密钥<br>This type of entry holds a cryptographic SecretKey, which is optionally stored in a protected format to prevent unauthorized access.</p>
+</blockquote>
+<blockquote>
+<p>KeyStore.TrustedCertificateEntry<br>存放受信任的证书<br>This type of entry contains a single public key Certificate belonging to another party. It is called a trusted certificate because the keystore owner trusts that the public key in the certificate indeed belongs to the identity identified by the subject (owner) of the certificate.</p>
+</blockquote>
+<h3 id="keystore的分类"><a href="#keystore的分类" class="headerlink" title="keystore的分类"></a>keystore的分类</h3><p>keystore常见的类型主要是java体系的秘钥库JKS,可以通过keytool生成的后缀为jks文件，另外一种常见的是openssl生成的PKCS12格式的fpx文件，网上导出可以找到他们互转的文档说明。搜索下资料整理下，除了以上2中外还有： JCEKS，BKS，UBER等</p>
+<ul>
+<li><p>JKS和JCEKS是Java密钥库(KeyStore)的两种比较常见类型，JKS的Provider是SUN，在每个版本的JDK中都有，JCEKS的Provider是SUNJCE，1.4后我们都能够直接使用它。JCEKS在安全级别上要比JKS强，使用的Provider是JCEKS(推荐)，尤其在保护KeyStore中的私钥上（使用TripleDes），但目前常用的还是JKS，可能是先入为主的原因。</p>
+</li>
+<li><p>PKCS#12是公钥加密标准，12是该标准的12个发行版本，在非对称加密应用较多，它规定了可包含所有私钥、公钥和证书。其以二进制格式存储，也称为 PFX 文件，在windows中可以直接导入到密钥区，注意，PKCS#12的密钥库保护密码同时也用于保护Key。</p>
+</li>
+<li><p>BKS 来自BouncyCastle Provider，它使用的也是TripleDES来保护密钥库中的Key，它能够防止证书库被不小心修改（Keystore的keyentry改掉1个 bit都会产生错误），BKS能够跟JKS互操作，读者可以用Keytool去TryTry。</p>
+</li>
+<li><p>UBER比较特别，当密码是通过命令行提供的时候，它只能跟keytool交互。整个keystore是通过PBE/SHA1/Twofish加密，因此keystore能够防止被误改、察看以及校验。以前，Sun JDK(提供者为SUN)允许你在不提供密码的情况下直接加载一个Keystore，类似cacerts，UBER不允许这种情况。</p>
+</li>
+</ul>
+<h2 id="证书"><a href="#证书" class="headerlink" title="证书"></a>证书</h2><h3 id="什么是证书"><a href="#什么是证书" class="headerlink" title="什么是证书"></a>什么是证书</h3><p>网上到处是数字证书的说明，如果没有实践经验，看到抽象的理论文字，头不较大，摸不着关键。上次与同事交流的时候，问道给我们的商户发放证书，用于通讯签名和加密话题，有同学问究竟说明是数字证书，我想了下，用了一种比较通俗的方式简单介绍下，同学说动了，先整理下来。</p>
+<p>在说证书前，我们先说下非对称加密的基础逻辑。<br><strong>场景</strong>：A,B双方需要通讯采用非对称加密传输数据，A和B各个有一对非对称秘钥a和b。A发送信息给B时，需要使用B的公钥（b_public）加密数据，那么B就需要先把b_public交给A，在互联网时代，这个交给A的动作是比较丰富的，一般不是是找个优盘拷贝下来，打给飞的送过去，通常都是通过网络先传给A。</p>
+<p><strong>问题</strong>：A怎么能相信这个b_public真的是B发过来的呢？或者中间是否被替换了呢？！存在这些风险和安全问题？</p>
+<p><strong>解决</strong>：怎么解决？于是出现了第三方权利机构CA.</p>
+<ol>
+<li>CA说请都相信我（我有权利，我是上帝~），B把b_public交给CA.</li>
+<li>CA的私钥对b_public签名,然后把B的实体信息，b_public及签名组合在一起，叫证书b_cert给A.</li>
+<li>A使用CA对全球公布的公钥验证b_cert证书里面的b_public是否正确，验证通过，则A可以使用这个证书里面的公钥进行加密数据发送给B了。</li>
+</ol>
+<p>OK，则个就是我给同学讲的场景，这个场景说明证书是第三方信任机构颁布的证明公钥及所有者信息合法有效的证明文件。当然广义证书里面也可以有私钥和其他信息的。</p>
+<p>下面是抽象理论说法，什么是证书呢？<br><strong>证书是实体及公钥的数字签名。</strong>多精简~~</p>
+<ul>
+<li>实体: 一个实体可以是一个人,一个组织,一个程序,一台计算机,一个商业,一个银行,或其他你想信任的东西.</li>
+<li>签名 :用实体私有钥匙加密某些消息，从而得到加密数据;</li>
+<li>公共钥匙 :是一个详细的实体的数字关联,并有意让所有想同这个实体发生信任关系的其他实体知道.公共钥匙用来检验签名;</li>
+<li>私有钥匙 :是一些数字,私有和公共钥匙存在所有用公共钥匙加密的系统的钥匙对中.公共钥匙用来加密数据，私有钥匙用来计算签名.公钥加密的消息只能用私钥解密，私钥签名的消息只能用公钥检验签名。</li>
+</ul>
+<blockquote>
+<p>公私钥关系：他们是成对关系,(加解密)公钥加密 -&gt; 私钥解密; （签名验签）私钥数字签名 -&gt; 公钥验证。</p>
+</blockquote>
+<h3 id="证书的分类"><a href="#证书的分类" class="headerlink" title="证书的分类"></a>证书的分类</h3><p>带有私钥的证书<br>1、由Public Key Cryptography Standards #12，PKCS#12标准定义，包含了公钥和私钥的二进制格式的证书形式，以pfx作为证书文件后缀名，其实就是keystore，我们也可以把Java体系的jks文件作为证书（关键是自签还是CA签名认证）。</p>
+<p>不带私钥的证书<br>包括二进制编码和BASE64编码证书，BASE64一般便于查看。一般以cer或crt作为扩展名。证书中没有私钥，只是公钥，实体信息和签名，这是标准意义上的证书。</p>
+<h2 id="密码编码"><a href="#密码编码" class="headerlink" title="密码编码"></a>密码编码</h2><p>密钥有多种形式的，很多情况下，需要把这些密钥保存下来。通常使用PEM和DER两种编码方式对要保存的密钥进行编码。</p>
+<p>DER编码存储的密钥文件是不可读的，如果用文本编辑器打开它，将看到一些难以理解的符号，因为这是一个二进制编码的文件。PEM则不一样，它要友好得多，因为PEM经过BASE64编码。用文本编辑器打开PEM编码的密钥文件，可以看到跟证书类似，它们真正的编码都包含在类似于：—BEGIN XXXXXX—和—END XXXXXX— 这样的符号对内。</p>
+<p>我们常见的pem扩展名文件就是PEM密码编码，一般都用于保存公私钥文件.全称为：Privacy Enhanced Mail，是一种保密邮件的编码标准。通常来说，对信息的编码过程基本如下：</p>
+<ol>
+<li>信息转换为ASCII码或其他编码方式，比如采用DER编码。</li>
+<li>使用对称加密算法加密经过编码的信息。</li>
+<li>使用BASE64对加密码后的信息进行编码。</li>
+<li><p>使用一些头定义对信息进行封装，主要包含了进行正确解码需要的信息，头定义的格式形式如下：</p>
+<blockquote>
+<p>Proc-Type:4,ENCRYPTED<br>DEK-Info:cipher-name,ivec<br>其中，第一个头信息标注了该文件是否进行了加密，该头信息可能的值包括ENCRYPTED(信息已经加密和签名)，MIC-ONLY(信息经过数据签名但没有加密)，MIC-CLEAR(信息经过数字签名但是没有加密，也没有进行编码，可使用非PEM格式阅读)，以及CLEAR；第二个头信息标注了加密的算法及对称加密块算法使用的初始向量。</p>
+</blockquote>
+</li>
+<li><p>在这些信息的前面加上如下形式头标注信息:—BEGIN PRIVACY-ENHANCED MESSAGE— ,在这些信息的后面加上如下形尾标注信息： —END PRIVACY-ENHANCED MESSAGE— 。</p>
+</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>Keystore用于是秘钥库，用来安全存储和管理秘钥（公钥和私钥）。常见2种jks和pfx为扩展名的文件格式，可以互转。</li>
+<li>秘钥（公钥和私钥）一般都是用PEM方式保存。扩展名一般为pem。PEM和DER是编码格式，证书既可以用DER（二进制格式）保存，也可以用PEM（基于Base64的字符格式）保存。</li>
+<li>发布公钥为证书，需要生成证书签名请求文件，一般叫CSR文件，也是扩展名，提交个CA。</li>
+<li>CA用自己的私钥文件签名之后生成的CRT文件就是完整的证书了，CER和CRT其实是一样的，只是一般Linux下面叫CRT多，Windows下面叫CER多。</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://acooly.github.io/2016/05/16/java/2016-05-15-java非对称加密(三)-代码及说明/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang pu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Acooly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/05/16/java/2016-05-15-java非对称加密(三)-代码及说明/" itemprop="url">Java非对称加密开发(三)-代码及说明</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-16T03:09:34+08:00">
+                2016-05-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>前面讲了理论和操作，现在看下最关键的代码实现，不废话，直接代码说明。本文最要介绍通过JCE及默认实现开发的一个RSA的工具类，主要包括两部分：加解密，签名验签和公私钥的各做加载方法。</p>
+<h2 id="公私钥的加载"><a href="#公私钥的加载" class="headerlink" title="公私钥的加载"></a>公私钥的加载</h2><p>作为一个工具类，会在各做场景和情况使用，所有要考虑比较全的公私加载方法，主要包括以下几种常见情况：</p>
+<ul>
+<li>从秘钥文件加载(*.pem格式)</li>
+<li>从二进制数据加载</li>
+<li>从base64数据加载</li>
+<li>从hex字符串数据加载</li>
+<li>从证书文件加载</li>
+<li>从keystore文件加载（jks和pfx）</li>
+</ul>
+<h3 id="公钥的加载"><a href="#公钥的加载" class="headerlink" title="公钥的加载"></a>公钥的加载</h3><ul>
+<li>秘钥数据加载<br>公钥秘钥数据的形态，常见的一般是二进制byte数组，base64，秘钥文件，hex字符串数据几种方式。其本质都是byte数组加载。代码如下：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 加载公钥（byte数组）</span></span><br><span class="line"><span class="comment">	 *</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> publicKeyBytes</span></span><br><span class="line"><span class="comment">	 *            公钥bytes</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> keyAlgorithm</span></span><br><span class="line"><span class="comment">	 *            算法，如：RSA</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> providerName</span></span><br><span class="line"><span class="comment">	 *            可为空</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span> 公钥对象</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> PublicKey <span class="title">loadPublicKey</span><span class="params">(<span class="keyword">byte</span>[] publicKeyBytes, String keyAlgorithm, String providerName)</span> </span>&#123;</span><br><span class="line">		String algorithm = Strings.isBlankDefault(keyAlgorithm, DEFAULT_KEY_ALGO);</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="comment">// KEY_ALGORITHM 指定的加密算法</span></span><br><span class="line">			KeyFactory keyFactory = <span class="keyword">null</span>;</span><br><span class="line">			<span class="keyword">if</span> (Strings.isBlank(providerName)) &#123;</span><br><span class="line">				keyFactory = KeyFactory.getInstance(algorithm);</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				keyFactory = KeyFactory.getInstance(algorithm, providerName);</span><br><span class="line">			&#125;</span><br><span class="line">			X509EncodedKeySpec keySpec = <span class="keyword">new</span> X509EncodedKeySpec(publicKeyBytes);</span><br><span class="line">			<span class="keyword">return</span> keyFactory.generatePublic(keySpec);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"load publicKey fail. "</span> + e.getMessage());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 加载公钥（base64）</span></span><br><span class="line"><span class="comment">	 *</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> publicKeyBase64</span></span><br><span class="line"><span class="comment">	 *            秘钥为BASE64编码</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> keyAlgorithm</span></span><br><span class="line"><span class="comment">	 *            如：RSA</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> providerName</span></span><br><span class="line"><span class="comment">	 *            可以为空，如：BC</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> PublicKey <span class="title">loadPublicKey</span><span class="params">(String publicKeyBase64, String keyAlgorithm, String providerName)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">byte</span>[] publicKeyBytes = Encodes.decodeBase64(publicKeyBase64);</span><br><span class="line">		<span class="keyword">return</span> loadPublicKey(publicKeyBytes, keyAlgorithm, providerName);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 加载公钥(文件pem)</span></span><br><span class="line"><span class="comment">	 *</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> publicKeyFile</span></span><br><span class="line"><span class="comment">	 *            公钥秘钥文件，内容为BASE64编码</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> keyAlgorithm</span></span><br><span class="line"><span class="comment">	 *            如：RSA</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> providerName</span></span><br><span class="line"><span class="comment">	 *            可以为空，如：BC</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> PublicKey <span class="title">loadPublicKey</span><span class="params">(File publicKeyFile, String keyAlgorithm, String providerName)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">byte</span>[] publicKeyBytes = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			publicKeyBytes = Encodes.decodeBase64(FileUtils.readFileToString(publicKeyFile));</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"加载公钥文件内容失败:"</span> + e.getMessage());</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> loadPublicKey(publicKeyBytes, keyAlgorithm, providerName);</span><br><span class="line">	&#125;	</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">```	</span><br><span class="line"></span><br><span class="line">* 通过证书或keystore加载</span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 证书文件加载</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> springResourceUri</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> PublicKey <span class="title">loadPublicKeyFromCert</span><span class="params">(String springResourceUri)</span> </span>&#123;</span><br><span class="line">		InputStream in = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Resource resource = <span class="keyword">new</span> DefaultResourceLoader().getResource(springResourceUri);</span><br><span class="line">			in = resource.getInputStream();</span><br><span class="line">			CertificateFactory cf = CertificateFactory.getInstance(<span class="string">"X.509"</span>);</span><br><span class="line">			X509Certificate x509 = (X509Certificate) cf.generateCertificate(in);</span><br><span class="line">			<span class="keyword">return</span> x509.getPublicKey();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"加载公钥文件内容失败:"</span> + e.getMessage());</span><br><span class="line">		&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">			IOUtils.closeQuietly(in);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 证书pem格式加载</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> pemCert</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> PublicKey <span class="title">loadPublicKeyFromCertWithPem</span><span class="params">(String pemCert)</span> </span>&#123;</span><br><span class="line">		InputStream in = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			CertificateFactory cf = CertificateFactory.getInstance(<span class="string">"X.509"</span>);</span><br><span class="line">			in = <span class="keyword">new</span> ByteArrayInputStream(Encodes.decodeBase64(pemCert));</span><br><span class="line">			X509Certificate x509 = (X509Certificate) cf.generateCertificate(in);</span><br><span class="line">			<span class="keyword">return</span> x509.getPublicKey();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"加载公钥文件内容失败:"</span> + e.getMessage());</span><br><span class="line">		&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">			IOUtils.closeQuietly(in);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 从keystore加载公钥</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> keystoreUri</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> keystoreType</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> keystorePassword</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> PublicKey <span class="title">loadPublicKeyFromKeyStore</span><span class="params">(String keystoreUri, String keystoreType,</span></span></span><br><span class="line"><span class="function"><span class="params">			String keystorePassword)</span> </span>&#123;</span><br><span class="line">		InputStream in = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			KeyStore keyStore = KeyStore.getInstance(keystoreType);</span><br><span class="line">			Resource resource = <span class="keyword">new</span> DefaultResourceLoader().getResource(keystoreUri);</span><br><span class="line">			in = resource.getInputStream();</span><br><span class="line">			keyStore.load(in, keystorePassword.toCharArray());</span><br><span class="line"></span><br><span class="line">			Enumeration&lt;String&gt; enumas = keyStore.aliases();</span><br><span class="line">			String keyAlias = <span class="keyword">null</span>;</span><br><span class="line">			<span class="keyword">if</span> (enumas.hasMoreElements()) &#123;</span><br><span class="line">				keyAlias = enumas.nextElement();</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">return</span> keyStore.getCertificate(keyAlias).getPublicKey();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"通过keystore加载证书公钥失败:"</span> + e.getMessage());</span><br><span class="line">		&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">			IOUtils.closeQuietly(in);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="私钥的加载"><a href="#私钥的加载" class="headerlink" title="私钥的加载"></a>私钥的加载</h3><p>私钥的加载默认同公钥，这里不在贴代码，从公钥稍微调整下就OK    </p>
+<h2 id="加密和解密"><a href="#加密和解密" class="headerlink" title="加密和解密"></a>加密和解密</h2><p>这里以RSA算法作为介绍，在JAVA实现中，需要注意几点：</p>
+<ul>
+<li>不管明文长度是多少，RSA 生成的密文长度总是固定的。</li>
+<li>明文长度不能超过密钥长度。比如 Java 默认的RSA加密实现不允许明文长度超过密钥长度减去 11(单位是字节，也就是 byte)。也就是说，如果我们定义的密钥(我们可以通过 java.security.KeyPairGenerator.initialize(int keysize) 来定义密钥长度)长度为1024(单位是位，也就是 bit)，生成的密钥长度就是 1024位 / 8位/字节 = 128字节，那么我们需要加密的明文长度不能超过 128字节 - 11 字节 = 117字节。也就是说，我们最大能将 117 字节长度的明文进行加密，否则会出问题(抛诸如 javax.crypto.IllegalBlockSizeException: Data must not be longer than 53 bytes 的异常)</li>
+<li>如果采用其他Provider，每段长度可能不同，如BC(Provider –&gt; Security.addProvider(new BouncyCastleProvider());) 提供的加密算法能够支持到的 RSA 明文长度最长为密钥长度。</li>
+</ul>
+<blockquote>
+<p>特别说明：一般来说Cipher的创建时初始化会比较慢（在我imac下，150ms左右），在性能要求的场景，有同学会担心性能问题，所以会采用ThreadLocal做内存缓存，我开始也这样做了，但是实际测试后发现，其他JCE的默认Provider已做了，而且做得很彻底（不是在ThreadLocal中缓存Cipher实例，而是缓存了Cipher实例初始化的较为耗时的操作和资源，kao~，NB），所以，针对非对称加密场景，不用考虑Cipher 的线程缓存~</p>
+</blockquote>
+<h3 id="公钥加密"><a href="#公钥加密" class="headerlink" title="公钥加密"></a>公钥加密</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 公钥加密</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> plainBytes</span></span><br><span class="line"><span class="comment"> *            明文bytes</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> publicKey</span></span><br><span class="line"><span class="comment"> *            公钥</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> 密文bytes</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">byte</span>[] encryptByPublicKey(<span class="keyword">byte</span>[] plainBytes, PublicKey publicKey) &#123;</span><br><span class="line">	ByteArrayOutputStream out = <span class="keyword">null</span>;</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		<span class="comment">// Cipher在非对称加密场景，没有必要自己做thread cache，JCE实现的provider默认做了~</span></span><br><span class="line">		Cipher cipher = Cipher.getInstance(publicKey.getAlgorithm());</span><br><span class="line">		cipher.init(Cipher.ENCRYPT_MODE, publicKey);</span><br><span class="line">		<span class="keyword">int</span> inputLen = plainBytes.length;</span><br><span class="line">		out = <span class="keyword">new</span> ByteArrayOutputStream();</span><br><span class="line">		<span class="keyword">int</span> offSet = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">byte</span>[] cache;</span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">		<span class="comment">// 对数据分段解密</span></span><br><span class="line">		<span class="keyword">int</span> keyLength = ((RSAPublicKey) publicKey).getModulus().bitLength() / <span class="number">8</span>;</span><br><span class="line">		<span class="keyword">int</span> plainLength = keyLength - <span class="number">11</span>;</span><br><span class="line">		<span class="keyword">while</span> (inputLen - offSet &gt; <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (inputLen - offSet &gt; plainLength) &#123;</span><br><span class="line">				cache = cipher.doFinal(plainBytes, offSet, plainLength);</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				cache = cipher.doFinal(plainBytes, offSet, inputLen - offSet);</span><br><span class="line">			&#125;</span><br><span class="line">			out.write(cache, <span class="number">0</span>, cache.length);</span><br><span class="line">			i++;</span><br><span class="line">			offSet = i * plainLength;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">byte</span>[] encryptedData = out.toByteArray();</span><br><span class="line">		<span class="keyword">return</span> encryptedData;</span><br><span class="line">	&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">		<span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"publicKey encrypt fail:"</span> + e.getMessage());</span><br><span class="line">	&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">		IOUtils.closeQuietly(out);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">encryptByPublicKeyBase64</span><span class="params">(String plainText, PublicKey publicKey, String charset)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> Encodes.encodeBase64(encryptByPublicKey(getBytes(plainText, charset), publicKey));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">encryptByPublicKeyBase64</span><span class="params">(String plainText, PublicKey publicKey)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> encryptByPublicKeyBase64(plainText, publicKey, DEFAULT_CHARSET);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">encryptByPublicKeyHex</span><span class="params">(String plainText, PublicKey publicKey, String charset)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> Encodes.encodeHex(encryptByPublicKey(getBytes(plainText, charset), publicKey));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">encryptByPublicKeyHex</span><span class="params">(String plainText, PublicKey publicKey)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> encryptByPublicKeyHex(plainText, publicKey, DEFAULT_CHARSET);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="私钥解密"><a href="#私钥解密" class="headerlink" title="私钥解密"></a>私钥解密</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 私钥解密</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> encryptedBytes</span></span><br><span class="line"><span class="comment"> *            密文数据bytes</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> privateKey</span></span><br><span class="line"><span class="comment"> *            私钥</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> 明文数据bytes</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">byte</span>[] decryptByPrivateKey(<span class="keyword">byte</span>[] encryptedBytes, PrivateKey privateKey) &#123;</span><br><span class="line">	ByteArrayOutputStream out = <span class="keyword">null</span>;</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		Cipher cipher = Cipher.getInstance(privateKey.getAlgorithm());</span><br><span class="line">		cipher.init(Cipher.DECRYPT_MODE, privateKey);</span><br><span class="line">		<span class="keyword">int</span> inputLen = encryptedBytes.length;</span><br><span class="line">		out = <span class="keyword">new</span> ByteArrayOutputStream();</span><br><span class="line">		<span class="keyword">int</span> offSet = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">byte</span>[] cache;</span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">		<span class="comment">// 对数据分段解密</span></span><br><span class="line">		<span class="keyword">int</span> keyLength = ((RSAPrivateKey) privateKey).getModulus().bitLength() / <span class="number">8</span>;</span><br><span class="line">		<span class="keyword">while</span> (inputLen - offSet &gt; <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (inputLen - offSet &gt; keyLength) &#123;</span><br><span class="line">				cache = cipher.doFinal(encryptedBytes, offSet, keyLength);</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				cache = cipher.doFinal(encryptedBytes, offSet, inputLen - offSet);</span><br><span class="line">			&#125;</span><br><span class="line">			out.write(cache, <span class="number">0</span>, cache.length);</span><br><span class="line">			i++;</span><br><span class="line">			offSet = i * keyLength;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">byte</span>[] decryptedData = out.toByteArray();</span><br><span class="line">		<span class="keyword">return</span> decryptedData;</span><br><span class="line">	&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">		<span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"privateKey decrypt fail:"</span> + e.getMessage());</span><br><span class="line">	&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">		IOUtils.closeQuietly(out);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">decryptByPrivateKeyBase64</span><span class="params">(String encryptedBase64, PrivateKey privateKey, String charset)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">byte</span>[] plainBytes = decryptByPrivateKey(Encodes.decodeBase64(encryptedBase64), privateKey);</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> String(plainBytes, Strings.isBlankDefault(charset, DEFAULT_CHARSET));</span><br><span class="line">	&#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">		<span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"不支持的字符集:"</span> + e.getMessage());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">decryptByPrivateKeyHex</span><span class="params">(String plainHex, PrivateKey privateKey, String charset)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">byte</span>[] plainBytes = decryptByPrivateKey(Encodes.decodeHex(plainHex), privateKey);</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> String(plainBytes, Strings.isBlankDefault(charset, DEFAULT_CHARSET));</span><br><span class="line">	&#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">		<span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"不支持的字符集:"</span> + e.getMessage());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="签名和验签"><a href="#签名和验签" class="headerlink" title="签名和验签"></a>签名和验签</h2><p>签名和验签基本无需考虑性能问题，我在imac上实际测试一般Signature的初始化在2ms左右，除非要求极致性能，否则也不用做线程缓存。</p>
+<h3 id="私钥签名"><a href="#私钥签名" class="headerlink" title="私钥签名"></a>私钥签名</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 私钥签名</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> dataBytes</span></span><br><span class="line"><span class="comment"> *            明文数据bytes</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> privateKey</span></span><br><span class="line"><span class="comment"> *            私钥 参考 loadPrivateKey方法</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> signatureAlgorithm</span></span><br><span class="line"><span class="comment"> *            签名算法 如：SHA1withRSA，MD5withRSA</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> 签名的二进制结果</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">byte</span>[] sign(<span class="meta">@NotNull</span> <span class="keyword">byte</span>[] dataBytes, <span class="meta">@NotNull</span> PrivateKey privateKey,</span><br><span class="line">		<span class="meta">@Null</span> String signatureAlgorithm) &#123;</span><br><span class="line">	String sa = Strings.isBlankDefault(signatureAlgorithm, SIGN_ALGO_SHA1);</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		Signature signature = Signature.getInstance(sa);</span><br><span class="line">		signature.initSign(privateKey);</span><br><span class="line">		signature.update(dataBytes);</span><br><span class="line">		<span class="keyword">return</span> signature.sign();</span><br><span class="line">	&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">		<span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"sign with "</span> + sa + <span class="string">" fail:"</span> + e.getMessage());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">signBase64</span><span class="params">(@NotNull String data, @NotNull PrivateKey privateKey,</span></span></span><br><span class="line"><span class="function"><span class="params">		@Null String signatureAlgorithm, @Null String dataCharset)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">byte</span>[] result = sign(getBytes(data, dataCharset), privateKey, signatureAlgorithm);</span><br><span class="line">	<span class="keyword">return</span> Encodes.encodeBase64(result);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">signBase64</span><span class="params">(@NotNull String data, @NotNull PrivateKey privateKey)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> signBase64(data, privateKey, <span class="keyword">null</span>, <span class="keyword">null</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">signHex</span><span class="params">(@NotNull String data, @NotNull PrivateKey privateKey, @Null String signatureAlgorithm,</span></span></span><br><span class="line"><span class="function"><span class="params">		@Null String dataCharset)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">byte</span>[] result = sign(getBytes(data, dataCharset), privateKey, signatureAlgorithm);</span><br><span class="line">	<span class="keyword">return</span> Encodes.encodeHex(result);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">signHex</span><span class="params">(@NotNull String data, @NotNull PrivateKey privateKey)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> signHex(data, privateKey, <span class="keyword">null</span>, <span class="keyword">null</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="公钥验签"><a href="#公钥验签" class="headerlink" title="公钥验签"></a>公钥验签</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 公钥验签</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> data</span></span><br><span class="line"><span class="comment"> *            明文数据bytes</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> signData</span></span><br><span class="line"><span class="comment"> *            签名数据bytes</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> publicKey</span></span><br><span class="line"><span class="comment"> *            公钥 参考 loadPublicKey(...)方法</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> signatureAlgorithm</span></span><br><span class="line"><span class="comment"> *            签名算法</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">verify</span><span class="params">(<span class="keyword">byte</span>[] data, <span class="keyword">byte</span>[] signData, PublicKey publicKey, String signatureAlgorithm)</span> </span>&#123;</span><br><span class="line">	String sa = Strings.isBlankDefault(signatureAlgorithm, SIGN_ALGO_SHA1);</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		Signature signature = Signature.getInstance(sa);</span><br><span class="line">		signature.initVerify(publicKey);</span><br><span class="line">		signature.update(data);</span><br><span class="line">		<span class="keyword">return</span> signature.verify(signData);</span><br><span class="line">	&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">		<span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"verify with "</span> + sa + <span class="string">" fail."</span> + e.getMessage());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">verifyBase64</span><span class="params">(String text, String signBase64, PublicKey publicKey, String signatureAlgorithm,</span></span></span><br><span class="line"><span class="function"><span class="params">		String charset)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">byte</span>[] data = getBytes(text, charset);</span><br><span class="line">	<span class="keyword">byte</span>[] signData = Encodes.decodeBase64(signBase64);</span><br><span class="line">	<span class="keyword">return</span> verify(data, signData, publicKey, signatureAlgorithm);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">verifyBase64</span><span class="params">(String text, String signBase64, PublicKey publicKey)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> verifyBase64(text, signBase64, publicKey, <span class="keyword">null</span>, <span class="keyword">null</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">verifyHex</span><span class="params">(String text, String signHex, PublicKey publicKey, String signatureAlgorithm,</span></span></span><br><span class="line"><span class="function"><span class="params">		String charset)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">byte</span>[] data = getBytes(text, charset);</span><br><span class="line">	<span class="keyword">byte</span>[] signData = Encodes.decodeHex(signHex);</span><br><span class="line">	<span class="keyword">return</span> verify(data, signData, publicKey, signatureAlgorithm);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">verifyHex</span><span class="params">(String text, String signHex, PublicKey publicKey)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> verifyHex(text, signHex, publicKey, <span class="keyword">null</span>, <span class="keyword">null</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="如果你实在要ThreadLocal"><a href="#如果你实在要ThreadLocal" class="headerlink" title="如果你实在要ThreadLocal"></a>如果你实在要ThreadLocal</h2><p>如果你选择的Provider不是JCE默认实现，并且这个实现还真没有做缓存，或者你在对称加密场景想做缓存（AES，ECS等场景Cipher初始化还是非常慢的~）。下面一个参考实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * RSA Cipher 线程缓存</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> zhangpu</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RSACipherCache</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 每个线程可以缓存最多100个不同秘钥对Cipher</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> THREAD_CACHE_SIZE = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> ThreadLocal&lt;LoadingCache&lt;Key, Cipher&gt;&gt; threadLocal = <span class="keyword">new</span> ThreadLocal&lt;LoadingCache&lt;Key, Cipher&gt;&gt;() &#123;</span><br><span class="line"></span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">protected</span> LoadingCache&lt;Key, Cipher&gt; <span class="title">initialValue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			<span class="comment">/**</span></span><br><span class="line"><span class="comment">			 * 设置一个按容量控制的内存缓存</span></span><br><span class="line"><span class="comment">			 */</span></span><br><span class="line">			<span class="keyword">return</span> CacheBuilder.newBuilder().recordStats().maximumSize(THREAD_CACHE_SIZE)</span><br><span class="line">					.build(<span class="keyword">new</span> CacheLoader&lt;Key, Cipher&gt;() &#123;</span><br><span class="line">				<span class="meta">@Override</span></span><br><span class="line">				<span class="function"><span class="keyword">public</span> Cipher <span class="title">load</span><span class="params">(<span class="keyword">final</span> Key key)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">					Cipher cipher = <span class="keyword">null</span>;</span><br><span class="line">					<span class="keyword">try</span> &#123;</span><br><span class="line">						cipher = Cipher.getInstance(key.getAlgorithm());</span><br><span class="line">						<span class="keyword">if</span> (PrivateKey.class.isAssignableFrom(key.getClass())) &#123;</span><br><span class="line">							<span class="comment">// 私钥，在加解密场景用于解密</span></span><br><span class="line">							cipher.init(Cipher.DECRYPT_MODE, key);</span><br><span class="line">						&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">							cipher.init(Cipher.ENCRYPT_MODE, key);</span><br><span class="line">						&#125;</span><br><span class="line">					&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">						<span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e);</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">return</span> cipher;</span><br><span class="line"></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Cipher <span class="title">newCipher</span><span class="params">(<span class="keyword">final</span> Key key)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (key == <span class="keyword">null</span>) &#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"Key must be not null."</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> threadLocal.get().getUnchecked(key);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> CacheStats <span class="title">getStats</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> threadLocal.get().stats();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">RSACipherCache</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>OK，以上基本够用~</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://acooly.github.io/2016/03/04/工具技巧/2016-03-03-imac dev-env qa/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang pu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Acooly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/03/04/工具技巧/2016-03-03-imac dev-env qa/" itemprop="url">mac dev-env qa</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-04T01:06:16+08:00">
+                2016-03-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tools/" itemprop="url" rel="index">
+                    <span itemprop="name">tools</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="eclipse-explorer-字体"><a href="#eclipse-explorer-字体" class="headerlink" title="eclipse explorer 字体"></a>eclipse explorer 字体</h3><p>新换mac，分辨率使用最高后，发现eclipse左边界面的explorer树里面的字体太小了，在references里面的font and color找了一圈也没有对应的字体大小修改，无赖放弃，今天突然在网上看到一种方式，尝试后，OK了，特记录下，感谢分享的同学。</p>
+<ol>
+<li>打开eclipse的安装目录，imac上就是在，Finder-&gt;应用程序，找到eclipse.app,右键后选择：显示包内容</li>
+<li>一路进入熟悉的eclipse安装目录后，进入plugins下，有个插件目录：org.eclipse.ui.themes_xxxx，进入该目录下的css里面，会看到很多css文件，因为是mac，所以选择e4_default_mac.css</li>
+<li><p>打开e4_default_mac.css文件后，在后面添加样式：</p>
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">CTabFolder</span> <span class="selector-tag">Tree</span>&#123; </span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>保持后，重新启动eclipse，生效OK~</p>
+</li>
+</ol>
+<h3 id="mysql字符问题"><a href="#mysql字符问题" class="headerlink" title="mysql字符问题"></a>mysql字符问题</h3><p>默认安装mysql后，发现服务器端默认字符集为：latin1。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show variables like '%char%';</span><br><span class="line">+<span class="comment">--------------------------+--------------------------------------------------------+</span></span><br><span class="line">| Variable_name            | Value                                                  |</span><br><span class="line">+<span class="comment">--------------------------+--------------------------------------------------------+</span></span><br><span class="line">| character_set_client     | utf8                                                   |</span><br><span class="line">| character_set_connection | utf8                                                   |</span><br><span class="line">| character_set_database   | latin1                                                 |</span><br><span class="line">| character_set_filesystem | binary                                                 |</span><br><span class="line">| character_set_results    | utf8                                                   |</span><br><span class="line">| character_set_server     | latin1                                                 |</span><br><span class="line">| character_set_system     | utf8                                                   |</span><br><span class="line">| character_sets_dir       | /usr/local/mysql-5.7.11-osx10.9-x86_64/share/charsets/ |</span><br><span class="line">+<span class="comment">--------------------------+--------------------------------------------------------+</span></span><br></pre></td></tr></table></figure>
+<p>问题：character_set_database   | latin1</p>
+<p>这个在windows和linux上默认安装一般不存在。想通过在my.cnf中修改字符配置给困住了~~，都找不到my.cnf。使劲百度后，问题解决，笔记如下：</p>
+<h4 id="my-cnf文件"><a href="#my-cnf文件" class="headerlink" title="my.cnf文件"></a>my.cnf文件</h4><p>mac的os安装mysql后，默认没有my.conf,需要从安装目录下的support-file里面去拷贝默认的my-default.cnf到/etc下，这个倒与linux环境放在一样的环境，注意需要root用户操作。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># su - root</span></span><br><span class="line">$ cp /usr/<span class="built_in">local</span>/mysql/support-file/my-default.cnf /etc/</span><br></pre></td></tr></table></figure>
+<h4 id="配置my-cnf字符集"><a href="#配置my-cnf字符集" class="headerlink" title="配置my.cnf字符集"></a>配置my.cnf字符集</h4><p>如果使用linux和windows环境的方式，在[mysqld]下面添加：default-character-set=utf8 或 default_character_set=utf8 是不行的，mysql服务无法启动。</p>
+<p>需要在[mysqld]下加入配置：character-set-server=utf8，在[client]加入：default-character-set=utf8</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">character-<span class="keyword">set</span>-server=utf8</span><br><span class="line">...</span><br><span class="line">[client]</span><br><span class="line">default-character-<span class="keyword">set</span>=utf8</span><br></pre></td></tr></table></figure>
+<p>OK，保持my.cnf后，重新启动mysql</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show variables like '%char%';</span><br><span class="line">+<span class="comment">--------------------------+--------------------------------------------------------+</span></span><br><span class="line">| Variable_name            | Value                                                  |</span><br><span class="line">+<span class="comment">--------------------------+--------------------------------------------------------+</span></span><br><span class="line">| character_set_client     | utf8                                                   |</span><br><span class="line">| character_set_connection | utf8                                                   |</span><br><span class="line">| character_set_database   | utf8                                                   |</span><br><span class="line">| character_set_filesystem | binary                                                 |</span><br><span class="line">| character_set_results    | utf8                                                   |</span><br><span class="line">| character_set_server     | utf8                                                   |</span><br><span class="line">| character_set_system     | utf8                                                   |</span><br><span class="line">| character_sets_dir       | /usr/local/mysql-5.7.11-osx10.9-x86_64/share/charsets/ |</span><br><span class="line">+<span class="comment">--------------------------+--------------------------------------------------------+</span></span><br><span class="line">8 rows in <span class="keyword">set</span> (<span class="number">0.04</span> sec)</span><br></pre></td></tr></table></figure>
+<p>注意：修改过来了：character_set_database   | utf8</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://acooly.github.io/2016/03/01/linux/2015-12-11-linux tools/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang pu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Acooly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/03/01/linux/2015-12-11-linux tools/" itemprop="url">linux 常用命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-01T16:18:35+08:00">
+                2016-03-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="查看终端链接情况"><a href="#查看终端链接情况" class="headerlink" title="查看终端链接情况"></a>查看终端链接情况</h3><pre><code>w
+w -h
+</code></pre><h3 id="系统负载"><a href="#系统负载" class="headerlink" title="系统负载"></a>系统负载</h3><pre><code>w
+</code></pre><h3 id="进程打开的文件"><a href="#进程打开的文件" class="headerlink" title="进程打开的文件"></a>进程打开的文件</h3><pre><code>lsof -p pid
+</code></pre><h3 id="端口的运行情况"><a href="#端口的运行情况" class="headerlink" title="端口的运行情况"></a>端口的运行情况</h3><pre><code>lsof -i:port
+</code></pre><h3 id="内存情况"><a href="#内存情况" class="headerlink" title="内存情况"></a>内存情况</h3><pre><code>free -m
+</code></pre><h3 id="进程、内存、内存分页、堵塞IO、traps及CPU活动的信息"><a href="#进程、内存、内存分页、堵塞IO、traps及CPU活动的信息" class="headerlink" title="进程、内存、内存分页、堵塞IO、traps及CPU活动的信息"></a>进程、内存、内存分页、堵塞IO、traps及CPU活动的信息</h3><pre><code>vmstat
+</code></pre><h3 id="磁盘io情况"><a href="#磁盘io情况" class="headerlink" title="磁盘io情况"></a>磁盘io情况</h3><pre><code>iostat
+</code></pre><h3 id="cpu-负载-内存等使用情况"><a href="#cpu-负载-内存等使用情况" class="headerlink" title="cpu/负载/内存等使用情况"></a>cpu/负载/内存等使用情况</h3><pre><code>top -n 1
+</code></pre><h3 id="磁盘io"><a href="#磁盘io" class="headerlink" title="磁盘io"></a>磁盘io</h3><pre><code>iotop
+</code></pre><h3 id="实际内存占用最多的进程"><a href="#实际内存占用最多的进程" class="headerlink" title="实际内存占用最多的进程"></a>实际内存占用最多的进程</h3><pre><code>ps aux | sort -k6nr | head -n 10
+</code></pre><h3 id="虚拟内存占用最多的进程"><a href="#虚拟内存占用最多的进程" class="headerlink" title="虚拟内存占用最多的进程"></a>虚拟内存占用最多的进程</h3><pre><code>ps aux | sort -k5nr | head -n 10
+</code></pre><h3 id="查看系统整体状况"><a href="#查看系统整体状况" class="headerlink" title="查看系统整体状况"></a>查看系统整体状况</h3><pre><code>dstat -lamps
+</code></pre><h3 id="查看进程启动命令"><a href="#查看进程启动命令" class="headerlink" title="查看进程启动命令"></a>查看进程启动命令</h3><pre><code>pstree -al pid|head -n 1
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://acooly.github.io/2016/03/01/linux/2015-09-25-linux_bash_cmd/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang pu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Acooly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/03/01/linux/2015-09-25-linux_bash_cmd/" itemprop="url">Linux批量文件追加</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-01T16:18:35+08:00">
+                2016-03-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>===============</p>
+<pre><code># 目录下所有java文件后追加空行
+find /root/security -depth -name &quot;*.java&quot; -exec sed -i &apos;$a\\n&apos; {} \;
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://acooly.github.io/2016/03/01/linux/2015-12-12-linux查看进程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang pu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Acooly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/03/01/linux/2015-12-12-linux查看进程/" itemprop="url">linux 查看进程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-01T16:18:35+08:00">
+                2016-03-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="查看进程占用端口"><a href="#查看进程占用端口" class="headerlink" title="查看进程占用端口"></a>查看进程占用端口</h3><pre><code>netstat -atunlp
+</code></pre><h3 id="端口号查询进程号"><a href="#端口号查询进程号" class="headerlink" title="端口号查询进程号"></a>端口号查询进程号</h3><pre><code>ss -lntp|grep port
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://acooly.github.io/2016/03/01/database/mysql/2015-04-23-mysql_query_cache/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang pu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Acooly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/03/01/database/mysql/2015-04-23-mysql_query_cache/" itemprop="url">MySQL 查询缓存</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-01T16:18:35+08:00">
+                2016-03-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mysql/" itemprop="url" rel="index">
+                    <span itemprop="name">mysql</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><blockquote>
+<p>配置查询缓存<br>修改配置文件，修改[mysqld]下的query_cache_size和query_cache_type（如果没有则添加）。其中query_cache_size表示缓存的大小，而query_cache_type有3个值，表示缓存那种类  型的select结果集，query_cache_type各个值如下：<br>0或off关闭缓存<br>1或on开启缓存，但是不保存使用sql_no_cache的select语句,如不缓存select  sql_no_cache name from wei where id=2<br>2或demand开启有条件缓存，只缓存带sql_cache的select语句，缓存select  sql_cache name from wei where id=4 </p>
+</blockquote>
+<pre><code>查看查询缓存配置参数
+mysql&gt; show variables like &apos;%query_cache%&apos;;
++------------------------------+----------+
+| Variable_name                | Value    |
++------------------------------+----------+
+| have_query_cache             | YES      |
+| query_cache_limit            | 1048576  |
+| query_cache_min_res_unit     | 4096     |
+| query_cache_size             | 10485760 |
+| query_cache_type             | ON       |
+| query_cache_wlock_invalidate | OFF      |
++------------------------------+----------+
+6 rows in set (0.00 sec)
+</code></pre><blockquote>
+<p>其中have_query_cache为是否开启，query_cache_limit 指定单个查询能够使用的缓冲区大小，缺省为1M；query_cache_min_res_unit为系统分配的最小缓存块大小，默认是4KB，设置值大对大数据查询有好处，但如果你的查询都是小数据 查询，就容易造成内存碎片和浪费；query_cache_size和query_cache_type就是上面我们的配置；query_cache_wlock_invalidate表示当有其他客户端正在对MyISAM表进行写操作时，如果查询在query cache中，是否返回cache结果还是等写操作完成再读表获取结果。</p>
+</blockquote>
+<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>我们先执行一次，select  count(*) from wei ;然后再执行一次，可以看出第二次用的时间远远低于第一次的执行，因为第二次从缓存中读取了select结果。</p>
+<pre><code>mysql&gt; select  count(*) from wei ;
++----------+
+| count(*) |
++----------+
+|  4194304 |
++----------+
+1 row in set (3.92 sec)
+
+mysql&gt; select  count(*) from wei ;
++----------+
+| count(*) |
++----------+
+|  4194304 |
++----------+
+1 row in set (0.00 sec)
+</code></pre><p>我们可以通过如下命令查看现在缓存的情况 </p>
+<pre><code>mysql&gt; show status like &apos;qcache%&apos;;
++-------------------------+----------+
+| Variable_name           | Value    |
++-------------------------+----------+
+| Qcache_free_blocks      | 1        |
+| Qcache_free_memory      | 10475424 |
+| Qcache_hits             | 1        |
+| Qcache_inserts          | 1        |
+| Qcache_lowmem_prunes    | 0        |
+| Qcache_not_cached       | 0        |
+| Qcache_queries_in_cache | 1        |
+| Qcache_total_blocks     | 4        |
++-------------------------+----------+
+8 rows in set (0.00 sec)
+</code></pre><p>其中各个参数的意义如下：</p>
+<ul>
+<li>Qcache_free_blocks：缓存中相邻内存块的个数。数目大说明可能有碎片。FLUSH QUERY CACHE会对缓存中的碎片进行整理，从而得到一个空闲块。 </li>
+<li>Qcache_free_memory：缓存中的空闲内存。 </li>
+<li>Qcache_hits：每次查询在缓存中命中时就增大 </li>
+<li>Qcache_inserts：每次插入一个查询时就增大。命中次数除以插入次数就是不中比率。 </li>
+<li>Qcache_lowmem_prunes：缓存出现内存不足并且必须要进行清理以便为更多查询提供空间的次数。这个数字最好长时间来看;如果这个 数字在不断增长，就表示可能碎片非常严重，或者内存很少。(上面的 free_blocks和free_memory可以告诉您属于哪种情况) </li>
+<li>Qcache_not_cached：不适合进行缓存的查询的数量，通常是由于这些查询不是 SELECT 语句或者用了now()之类的函数。 </li>
+<li>Qcache_queries_in_cache：当前缓存的查询(和响应)的数量。 </li>
+<li>Qcache_total_blocks：缓存中块的数量。 </li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://acooly.github.io/2016/03/01/linux/2015-12-12-linuxTCP连接/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang pu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Acooly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/03/01/linux/2015-12-12-linuxTCP连接/" itemprop="url">linux TCP连接数和情况</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-01T16:18:35+08:00">
+                2016-03-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <pre><code># 查看httpd的链接数
+ps -ef | grep httpd | wc -l
+
+# 查看连接总体情况
+netstat -n | awk &apos;/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}&apos;
+
+TIME_WAIT 3
+CLOSE_WAIT 37
+SYN_SENT 1
+ESTABLISHED 9
+SYN_RECV 1
+</code></pre><p>其中的SYN_RECV表示正在等待处理的请求数；ESTABLISHED表示正常数据传输状态；TIME_WAIT表示处理完毕，等待超时结束的请求数。</p>
+<p>参照表</p>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CLOSED</td>
+<td>无连接是活动的或正在进行</td>
+</tr>
+<tr>
+<td>LISTEN</td>
+<td>服务器在等待进入呼叫</td>
+</tr>
+<tr>
+<td>SYN_RECV</td>
+<td>一个连接请求已经到达，等待确认</td>
+</tr>
+<tr>
+<td>SYN_SENT</td>
+<td>应用已经开始，打开一个连接</td>
+</tr>
+<tr>
+<td>ESTABLISHED</td>
+<td>正常数据传输状态</td>
+</tr>
+<tr>
+<td>FIN_WAIT1</td>
+<td>应用说它已经完成</td>
+</tr>
+<tr>
+<td>FIN_WAIT2</td>
+<td>另一边已同意释放</td>
+</tr>
+<tr>
+<td>ITMED_WAIT</td>
+<td>等待所有分组死掉</td>
+</tr>
+<tr>
+<td>CLOSING</td>
+<td>两边同时尝试关闭</td>
+</tr>
+<tr>
+<td>TIME_WAIT</td>
+<td>另一边已初始化一个释放</td>
+</tr>
+<tr>
+<td>LAST_ACK</td>
+<td>等待所有分组死掉</td>
+</tr>
+</tbody>
+</table>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.jpeg"
+                alt="zhang pu" />
+            
+              <p class="site-author-name" itemprop="name">zhang pu</p>
+              <p class="site-description motion-element" itemprop="description">本质是个程序猿，会点产品，懂点业务，有帮可信赖的志同道合的同伴，做点组织管理，基础架构和应用架构的事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://bohr.me/" title="qiubo's life" target="_blank">qiubo's life</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.1119e.com/" title="投资1119e" target="_blank">投资1119e</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.pccb.com" title="普资金服" target="_blank">普资金服</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhang pu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

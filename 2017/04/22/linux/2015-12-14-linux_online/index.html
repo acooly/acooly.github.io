@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="java,linux," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本日志主要针对基于java web的项目部署生成环境搭建的操作。在安装配置目标服务器环境前，对OS和基础环境做基本设计和配置。 OS环境信任登录1、在A机器，使用一下命令一路回传后，生成秘钥对在：~/.ssh下，有：id_rsa,id_rsa.pub,know_hosts 1ssh-keygen -t rsa 2、使用scp拷贝id_rsa.pub到B机器的：~/.ssh下，并添加内容到autho">
+<meta name="keywords" content="java,linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux java生产环境">
+<meta property="og:url" content="http://acooly.github.io/2017/04/22/linux/2015-12-14-linux_online/index.html">
+<meta property="og:site_name" content="Acooly&#39;s Blog">
+<meta property="og:description" content="本日志主要针对基于java web的项目部署生成环境搭建的操作。在安装配置目标服务器环境前，对OS和基础环境做基本设计和配置。 OS环境信任登录1、在A机器，使用一下命令一路回传后，生成秘钥对在：~/.ssh下，有：id_rsa,id_rsa.pub,know_hosts 1ssh-keygen -t rsa 2、使用scp拷贝id_rsa.pub到B机器的：~/.ssh下，并添加内容到autho">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-04-22T06:54:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux java生产环境">
+<meta name="twitter:description" content="本日志主要针对基于java web的项目部署生成环境搭建的操作。在安装配置目标服务器环境前，对OS和基础环境做基本设计和配置。 OS环境信任登录1、在A机器，使用一下命令一路回传后，生成秘钥对在：~/.ssh下，有：id_rsa,id_rsa.pub,know_hosts 1ssh-keygen -t rsa 2、使用scp拷贝id_rsa.pub到B机器的：~/.ssh下，并添加内容到autho">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://acooly.github.io/2017/04/22/linux/2015-12-14-linux_online/"/>
+
+
+
+
+
+  <title>linux java生产环境 | Acooly's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Acooly's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">coder live</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://acooly.github.io/2017/04/22/linux/2015-12-14-linux_online/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang pu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Acooly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">linux java生产环境</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-22T14:54:41+08:00">
+                2017-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本日志主要针对基于java web的项目部署生成环境搭建的操作。在安装配置目标服务器环境前，对OS和基础环境做基本设计和配置。</p>
+<h1 id="OS环境"><a href="#OS环境" class="headerlink" title="OS环境"></a>OS环境</h1><h2 id="信任登录"><a href="#信任登录" class="headerlink" title="信任登录"></a>信任登录</h2><p>1、在A机器，使用一下命令一路回传后，生成秘钥对在：~/.ssh下，有：id_rsa,id_rsa.pub,know_hosts</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
+<p>2、使用scp拷贝id_rsa.pub到B机器的：~/.ssh下，并添加内容到authorized_keys文件中。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat id_rsa.pub &gt;&gt; authorized_keys</span><br></pre></td></tr></table></figure>
+<p>3、完成后测试，在A机器可以免密码访问B机器，包括ssh,scp等</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@B机器</span><br></pre></td></tr></table></figure>
+<h2 id="查看最新变动和新增的文件"><a href="#查看最新变动和新增的文件" class="headerlink" title="查看最新变动和新增的文件"></a>查看最新变动和新增的文件</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 当天变动文件</span></span><br><span class="line">find /data/media -mtime -1 -<span class="built_in">print</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 一日以前的</span></span><br><span class="line">find / -mtime +1 -<span class="built_in">print</span></span><br></pre></td></tr></table></figure>
+<h2 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h2><p>下面的命令是linux较好用的生成密码的命令。12位</p>
+<pre><code>cat /dev/urandom | tr -dc &quot;a-zA-Z0-9_+\~\!\@\#\$\%\^\&amp;\*\(\)&quot;| fold -w 12 |head -n 12
+...
+passwd
+...
+</code></pre><h2 id="修改硬盘挂载点。"><a href="#修改硬盘挂载点。" class="headerlink" title="修改硬盘挂载点。"></a>修改硬盘挂载点。</h2><pre><code>df -h
+# 查看现在的挂载情况
+vim /etc/fstab
+# 修改挂载的目录，并保存退出
+# umount 原挂载目录
+# mount 新挂载目录
+</code></pre><h2 id="修改机器名称"><a href="#修改机器名称" class="headerlink" title="修改机器名称"></a>修改机器名称</h2><pre><code>hostname newHostName
+vi /etc/sysconfig/network
+# 修改或增加配置：hostname=newHostName
+vi /etc/hosts
+# 修改对应的本地HOST映射
+# xx.xxx.xxx.xxx newHostName
+</code></pre><h2 id="时间同步服务ntp-server"><a href="#时间同步服务ntp-server" class="headerlink" title="时间同步服务ntp-server"></a>时间同步服务ntp-server</h2><p>请参考： <a href="http://acooly.iteye.com/blog/1993484" target="_blank" rel="noopener">NTP服务及时间同步(CentOS6.x)</a>.</p>
+<h2 id="SSH常用配置"><a href="#SSH常用配置" class="headerlink" title="SSH常用配置"></a>SSH常用配置</h2><p>ssh的常规配置一般都需要修改：/etc/ssh_config配置文件。</p>
+<h3 id="修改端口"><a href="#修改端口" class="headerlink" title="修改端口"></a>修改端口</h3><pre><code>查找到#Port 22字段删掉#，将22改为其他不被使用的端口。如：23987, 22223,22225等
+</code></pre><h3 id="禁用root登录，使用普通用户登录。"><a href="#禁用root登录，使用普通用户登录。" class="headerlink" title="禁用root登录，使用普通用户登录。"></a>禁用root登录，使用普通用户登录。</h3><pre><code>vim /etc/ssh/sshd_config
+#查找“#PermitRootLogin yes”，将前面的“#”去掉，短尾“Yes”改为“No”，并保存文件退出(:wq)
+</code></pre><p>注意，禁用root后，需要建立普通用户登录：</p>
+<pre><code>groupadd operator
+useradd -g operator -G operator optuser
+passwd optuser
+# ....
+</code></pre><h3 id="修改自动断开时间"><a href="#修改自动断开时间" class="headerlink" title="修改自动断开时间"></a>修改自动断开时间</h3><p>很多时候，登入ssh后，不希望一会（1-2分钟）没有操作终端的ssh就自动断开，则需要配置一下参数。</p>
+<pre><code>找到下面两行
+#ClientAliveInterval 0
+#ClientAliveCountMax 3
+去掉注释，改成
+ClientAliveInterval 30
+ClientAliveCountMax 86400
+这两行的意思分别是
+1、客户端每隔多少秒向服务发送一个心跳数据
+2、客户端多少秒没有相应，服务器自动断掉连接
+</code></pre><blockquote>
+<p>注意：ssh的配置修改后，需要重新启动ssh服务：service sshd restart</p>
+</blockquote>
+<h2 id="锁定系统中多余的自建帐号"><a href="#锁定系统中多余的自建帐号" class="headerlink" title="锁定系统中多余的自建帐号"></a>锁定系统中多余的自建帐号</h2><pre><code># 用户名文件
+cat /etc/passwd
+# 用户密码信息
+cat /etc/shadow
+
+#操作前注意先备份
+cp /etc/passwd 
+/etc/passwd_bak
+#...
+</code></pre><p>###评估：</p>
+<blockquote>
+<p>如果passwd中的用户信息后面跟有/sbin/nologin,则表示该用户无法登陆系统，有密码也不行。同时密码文件shadow中，如果第二个字段是”!”也表示不能登陆。所有大部分系统用户（如：）是不能登陆的。可以通过以下命令查找。</p>
+</blockquote>
+<pre><code>cat /etc/passwd |grep /sbin/nologin -c
+20
+wc /etc/passwd
+26
+</code></pre><blockquote>
+<p>对比查看可以登录用户个数。在针对判断这剩余的可登录的用户，在shadow文件中是否设置密码可登录。如（sync，shutdown，halt）</p>
+</blockquote>
+<pre><code>cat /etc/shadow |grep halt
+</code></pre><blockquote>
+<p>如果第二个字段含有不属于集合{./0-9A-Za-z}中的字符，则对应的用户不能登录。</p>
+</blockquote>
+<p>###处理<br>如果出现异常的用户，可以使用命令进行锁定处理。</p>
+<ol><br><li>passwd -l &lt;用户名&gt;锁定不必要的账号</li><br><li>passwd -u &lt;用户名&gt;解锁需要恢复的账号</li><br></ol>
+
+<h2 id="设置系统口令策略"><a href="#设置系统口令策略" class="headerlink" title="设置系统口令策略"></a>设置系统口令策略</h2><p>###检查：<br>    [root@test ~]# cat /etc/login.defs|grep PASS</p>
+<pre><code>#    PASS_MAX_DAYS    Maximum number of days a password may be used.
+#    PASS_MIN_DAYS    Minimum number of days allowed between password changes.
+#    PASS_MIN_LEN    Minimum acceptable password length.
+#    PASS_WARN_AGE    Number of days warning given before a password expires.
+PASS_MAX_DAYS    99999
+PASS_MIN_DAYS    0
+PASS_MIN_LEN    5
+PASS_WARN_AGE    7
+</code></pre><p>###备份：<br>    cp -p /etc/login.defs /etc/login.defs_bak</p>
+<p>###加固：</p>
+<pre><code>#vi /etc/login.defs 
+</code></pre><p>修改配置文件:</p>
+<ol>
+<li>PASS_MAX_DAYS 90  #新建用户的密码最长使用天数</li>
+<li>PASS_MIN_DAYS 0   #新建用户的密码最短使用天数</li>
+<li>PASS_WARN_AGE 7   #新建用户的密码到期提前提醒天数</li>
+<li>PASS_MIN_LEN 12   #最小密码长度12</li>
+</ol>
+<h2 id="检查空口令帐号"><a href="#检查空口令帐号" class="headerlink" title="检查空口令帐号"></a>检查空口令帐号</h2><p>###检查：</p>
+<blockquote>
+<p>密码为空的情况，在shadow文件中的第二列为空，通过以下命名检查</p>
+</blockquote>
+<pre><code>cat /etc/shadow |awk -F &apos;:&apos; &apos;($2 == &quot;&quot;) {print}&apos;
+optuser1::16529:0:99999:7:::
+</code></pre><p>###处理<br><em>我们可以看到出现有一个没有设置密码的用户optuser1,这种情况需要对该用户进行处理，处理方法可以是强制设置密码或删除用户。</em></p>
+<pre><code># 删除用户
+userdel optuser1
+# 设置密码
+passwd optuser1
+...
+</code></pre><blockquote>
+<p>特别的，如果想模拟空用户，可以进行如下操作：</p>
+</blockquote>
+<pre><code>useradd -g groupName -G groupName testuser*
+useradd -uf testuser*
+</code></pre><h2 id="YUM配置和使用"><a href="#YUM配置和使用" class="headerlink" title="YUM配置和使用"></a>YUM配置和使用</h2><p>一般redhat或centOS的时候，直接采用yum方式安装一些必须的软件包是最方便的方式。yum可以解决软件包依存问题，更便于管理大量的系统更新问题。它可以同时配置多个仓库或叫资源库(repository)</p>
+<blockquote>
+<p>默认情况下yum的配置是直接连接互联网的远程官方或指定专用服务器查询或获取软件包。这会有一些问题，如果目标环境无法上网或网络较慢就会影响配置工作，建议一般在本地或本机局域网搭建安装源用户yum方式安装支持。</p>
+</blockquote>
+<p>仓库(repository)的配置，默认是链接到发行方指定的镜像地址，一般在国外，就一个字：慢。所以，一般在系统部署时，会选择一下几种方式自定义配置yum的源仓库。</p>
+<h3 id="配置仓库"><a href="#配置仓库" class="headerlink" title="配置仓库"></a>配置仓库</h3><p>仓库的配置文件在/etc/yum.repo.d下，自己可以建立一个配置文件。如：CentOS-base-xx.repo (yum会自动生效)</p>
+<pre><code>常用文件格式说明：
+[base]
+name=CentOS-6-Base-xxx
+
+# http方式
+baseurl=http://mirrors.163.com/centos/6/os/$basearch/   
+# 本地文件方式（包括NFS挂载）
+baseurl=file:///media/...
+# ftp方式
+baseurl=ftp://192.168.0.x/...
+
+# 是否可用开关
+enabled=1
+# 表示是否打开本地安装文件校验。我一般关闭，简单点，因为一般情况下你自己知道的安装源是否安全。
+gpgcheck=1    
+# gpgcheck对应的秘钥文件
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+</code></pre><h4 id="本地仓库"><a href="#本地仓库" class="headerlink" title="本地仓库"></a>本地仓库</h4><p>拷贝本地安装光盘到服务器，指定为安装仓库源,使用NFS方式进行局域网共享，每台服务器mount到本地设置yum配置文件或者使用FTP方式共享。最快哈哈。（不能上公网的情况最好使用这种）</p>
+<pre><code>[base]
+name=CentOS-6-Base-xxx 
+# 本地文件方式（包括NFS挂载）
+baseurl=file:///media/...
+# 是否可用开关
+enabled=1
+# 表示是否打开本地安装文件校验。我一般关闭，简单点，因为一般情况下你自己知道的安装源是否安全。
+gpgcheck=1    
+# gpgcheck对应的秘钥文件
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+</code></pre><h4 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h4><p>找一个国内的公共安装源（能上公网），如163镜像等，配置为通过http方式。</p>
+<pre><code>[base]
+name=CentOS-6-Base-xxx 
+# http方式
+baseurl=http://mirrors.163.com/centos/6/os/$basearch/ 
+# 是否可用开关
+enabled=1
+# 表示是否打开本地安装文件校验。我一般关闭，简单点，因为一般情况下你自己知道的安装源是否安全。
+gpgcheck=1    
+# gpgcheck对应的秘钥文件
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+</code></pre><p>完整文件参考（来源：西部数码云服务器CentOS6.4）:</p>
+<pre><code>[base]
+name=CentOS-6 - Base - 163.com
+baseurl=http://mirrors.163.com/centos/6/os/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+
+#released updates 
+[updates]
+name=CentOS-6 - Updates - 163.com
+baseurl=http://mirrors.163.com/centos/6/updates/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+
+#packages used/produced in the build but not released
+#additional packages that may be useful
+[extras]
+name=CentOS-6 - Extras - 163.com
+baseurl=http://mirrors.163.com/centos/6/extras/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+</code></pre><h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><ul>
+<li>yum search xxx</li>
+<li>yum install xxx</li>
+<li>yum update xxx</li>
+<li>yum remove xxx</li>
+</ul>
+<h1 id="常见问题处理"><a href="#常见问题处理" class="headerlink" title="常见问题处理"></a>常见问题处理</h1><h2 id="查看linux服务CPU位数"><a href="#查看linux服务CPU位数" class="headerlink" title="查看linux服务CPU位数"></a>查看linux服务CPU位数</h2><pre><code># uname -a
+Linux iZ23ibjdhg1Z 2.6.32-431.23.3.el6.x86_64 #1 SMP Thu Jul 31 17:20:51 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+</code></pre><p>如果包含“x86_64”则表示是64位服务器。</p>
+<ul>
+<li>如果是64位服务器，一般可以支持的最大堆内存可以配置为4G</li>
+<li>如果是32位服务器，一般可以支持的最大堆内存可以配置为2G</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="zhang pu wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫描上面的二维码，订阅我的博客</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/21/服务应用/2015-12-21-rsync同步文件/" rel="next" title="rsync同步数据">
+                <i class="fa fa-chevron-left"></i> rsync同步数据
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/01/服务应用/2016-07-1-nginx+tomcat的https卸载配置/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.jpeg"
+                alt="zhang pu" />
+            
+              <p class="site-author-name" itemprop="name">zhang pu</p>
+              <p class="site-description motion-element" itemprop="description">本质是个程序猿，会点产品，懂点业务，有帮可信赖的志同道合的同伴，做点组织管理，基础架构和应用架构的事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://bohr.me/" title="qiubo's life" target="_blank">qiubo's life</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.1119e.com/" title="投资1119e" target="_blank">投资1119e</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.pccb.com" title="普资金服" target="_blank">普资金服</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OS环境"><span class="nav-number">1.</span> <span class="nav-text">OS环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#信任登录"><span class="nav-number">1.1.</span> <span class="nav-text">信任登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看最新变动和新增的文件"><span class="nav-number">1.2.</span> <span class="nav-text">查看最新变动和新增的文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改密码"><span class="nav-number">1.3.</span> <span class="nav-text">修改密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改硬盘挂载点。"><span class="nav-number">1.4.</span> <span class="nav-text">修改硬盘挂载点。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改机器名称"><span class="nav-number">1.5.</span> <span class="nav-text">修改机器名称</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时间同步服务ntp-server"><span class="nav-number">1.6.</span> <span class="nav-text">时间同步服务ntp-server</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH常用配置"><span class="nav-number">1.7.</span> <span class="nav-text">SSH常用配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改端口"><span class="nav-number">1.7.1.</span> <span class="nav-text">修改端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#禁用root登录，使用普通用户登录。"><span class="nav-number">1.7.2.</span> <span class="nav-text">禁用root登录，使用普通用户登录。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改自动断开时间"><span class="nav-number">1.7.3.</span> <span class="nav-text">修改自动断开时间</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#锁定系统中多余的自建帐号"><span class="nav-number">1.8.</span> <span class="nav-text">锁定系统中多余的自建帐号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置系统口令策略"><span class="nav-number">1.9.</span> <span class="nav-text">设置系统口令策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#检查空口令帐号"><span class="nav-number">1.10.</span> <span class="nav-text">检查空口令帐号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#YUM配置和使用"><span class="nav-number">1.11.</span> <span class="nav-text">YUM配置和使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置仓库"><span class="nav-number">1.11.1.</span> <span class="nav-text">配置仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#本地仓库"><span class="nav-number">1.11.1.1.</span> <span class="nav-text">本地仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#远程仓库"><span class="nav-number">1.11.1.2.</span> <span class="nav-text">远程仓库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令"><span class="nav-number">1.11.2.</span> <span class="nav-text">常用命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常见问题处理"><span class="nav-number">2.</span> <span class="nav-text">常见问题处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看linux服务CPU位数"><span class="nav-number">2.1.</span> <span class="nav-text">查看linux服务CPU位数</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhang pu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
